@@ -1,0 +1,13 @@
+php artisan make:controller AlumnoAsistenciaController -r 
+php artisan make:controller CalificacionController -r 
+php artisan make:controller ExamenController -r 
+php artisan make:controller AlumnoController -r 
+php artisan make:controller FuncionarioController -r 
+php artisan make:controller MatriculacionController -r 
+php artisan make:controller AlumnoProcesoController -r 
+php artisan make:controller CarreraController -r 
+php artisan make:controller TipoUsuarioController -r 
+php artisan make:controller SolicitudController -r 
+php artisan make:controller BecaController -r 
+php artisan make:controller InscripcionController -r 
+php artisan make:controller MateriaController -r 

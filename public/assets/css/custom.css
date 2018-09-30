@@ -1,0 +1,36 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	
+}
+
+
+.preloader {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	
+	background: #fff;
+	z-index: 1000;
+	
+}	
+
+
+.preloader .icon {
+	background: url('../images/preloader-icon.webp');
+	background-size: 200px 150px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 200px;
+	height: 150px;
+	margin: 200px auto;
+}
+
+.dlg-hidden  {
+	visibility: hidden;
+}
+
+
+.btn-default {
+	width: 90px;
+}
