@@ -6,6 +6,10 @@ Route::get('/', function () {
 });
 
 
+Route::get('/', [
+	'as' => 'dashboard',
+	'uses' => 'DashboardController@index'
+]);
 
 Route::resource('asistencias', 'AlumnoAsistenciaController');
 Route::resource('calificaciones', 'CalificacionController');

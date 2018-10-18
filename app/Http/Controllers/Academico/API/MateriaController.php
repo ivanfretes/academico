@@ -5,6 +5,8 @@ namespace KuaaSys\Http\Controllers\Academico\API;
 use Illuminate\Http\Request;
 use KuaaSys\Http\Controllers\Controller;
 use KuaaSys\Model\Academico\Materia;
+use KuaaSys\Model\Academico\MateriaxCarrera;
+
 
 class MateriaController extends Controller
 {
@@ -32,6 +34,14 @@ class MateriaController extends Controller
         return 'Insertado';
     }
 
+
+    /**
+     * Verificia si el alumno no se inscripbio en la 
+     */
+    public function notInscription(){
+
+    }
+
     /**
      * Display the specified resource.
      *
@@ -40,7 +50,7 @@ class MateriaController extends Controller
      */
     public function show($id)
     {
-        //
+        Materia
     }
 
 

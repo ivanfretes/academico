@@ -9,7 +9,7 @@ use KuaaSys\Model\Academico\Alumno;
 class AlumnoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Visualiza pagina principal de alumnso
      *
      * @return \Illuminate\Http\Response
      */
@@ -18,8 +18,9 @@ class AlumnoController extends Controller
 
         $alumnos = Alumno::orderBy('id_alumno', 'desc')->get();
 
-        return view('alumno.alumno-list', [
-            'alumnos' => $alumnos
+        return view('alumno.alumno-dashboard', [
+            'alumnos' => $alumnos,
+            'alumnoView' => 'alumno.partials.alumno-searchbar'
         ]);
     }
 
@@ -38,7 +39,9 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        //
+        return view('alumno.alumno-dashboard', [
+            'alumnoView' => 'alumno.partials.alumno-form'
+        ]);
     }
 
     /**
@@ -53,10 +56,7 @@ class AlumnoController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Visualizamos el perfil academico del alumno
      */
     public function show($id)
     {
@@ -69,9 +69,12 @@ class AlumnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Alumno $id)
     {
-        //
+
+        return view('alumno.alumno-dashboard', [
+            'alumnoView' => 'alumno.partials.alumno-form'
+        ]);
     }
 
     /**

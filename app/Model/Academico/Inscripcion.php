@@ -9,5 +9,6 @@ class Inscripcion extends Model
     protected $table = 'inscripciones';
     public $primaryKey = 'id_inscripcion';
     public $timestamps = false;
+	
 	protected $guarded = array();
 }

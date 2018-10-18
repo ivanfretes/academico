@@ -12,8 +12,8 @@ class MateriaxCarreraController extends Controller
 	/**
 	 * Listado de las materias de una carrera
 	 */
-    public function index(Request $request){
-    	return MateriaxCarrera::all();
+    public function index($carreraId){
+        return MateriaxCarrera::where('id_carrera',$carreraId)->get();
     }
 
 
@@ -26,7 +26,6 @@ class MateriaxCarreraController extends Controller
 
     	return 'insertado';
     }
-
 
     /*public function update(Request $request){
     	

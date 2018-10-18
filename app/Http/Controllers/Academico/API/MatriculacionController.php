@@ -5,7 +5,7 @@ namespace KuaaSys\Http\Controllers\Academico\API;
 use Illuminate\Http\Request;
 use KuaaSys\Http\Controllers\Controller;
 use KuaaSys\Model\Academico\Matriculacion;
-
+use KuaaSys\Model\Academico\Inscripcion;
 class MatriculacionController extends Controller
 {
     /**

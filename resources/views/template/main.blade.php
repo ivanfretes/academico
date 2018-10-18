@@ -4,8 +4,8 @@
 @include('template.errors')
 
 
-<div class="container">
-@yield('content_page')
+<div class="container page-container">
+	@yield('content_page')
 </div>
 
 @include('template.footer-main')

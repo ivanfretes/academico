@@ -3,6 +3,9 @@
 namespace KuaaSys\Http\Controllers;
 
 use Illuminate\Http\Request;
+use KuaaSys\Model\Academico\Materia;
+use KuaaSys\Model\Academico\HorarioMateria;
+use KuaaSys\Model\Academico\Carrera;
 
 class MateriaController extends Controller
 {
@@ -13,7 +16,11 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        //
+
+        $carreras = Carrera::all();
+        return view('materia.materia-dashboard', [
+            'carreras' => $carreras
+        ]);
     }
 
     /**
@@ -23,7 +30,10 @@ class MateriaController extends Controller
      */
     public function create()
     {
-        //
+        $carreras = Carrera::all();
+        return view('materia.materia-detail', [
+            'carreras' => $carreras
+        ]);
     }
 
     /**

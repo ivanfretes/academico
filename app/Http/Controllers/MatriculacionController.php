@@ -26,11 +26,7 @@ class MatriculacionController extends Controller
     {
         $carreras = Carrera::all();
 
-
-        return $carreras;
-
-
-        
+        //return $carreras;
         return view('matriculacion.matriculacion-dashboard', [
             'carreras' => $carreras
         ]); 

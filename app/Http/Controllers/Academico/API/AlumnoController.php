@@ -5,7 +5,9 @@ namespace KuaaSys\Http\Controllers\Academico\API;
 use Illuminate\Http\Request;
 use KuaaSys\Http\Controllers\Controller;
 use KuaaSys\Model\Academico\Alumno;
-use KuaaSys\Http\Resources\Alumno as AlumnoResource;
+use KuaaSys\Http\Resources\AlumnoResource;
+use KuaaSys\Http\Resources\AlumnoCollection;
+use KuaaSys\Http\Requests\AlumnoStore;
 
 class AlumnoController extends Controller
 {
@@ -21,9 +23,19 @@ class AlumnoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return Alumno::all();
-        //return AlumnoResource::collection(Alumno::all());
+    {   
+        
+        return new AlumnoCollection(Alumno::paginate());
+    }
+
+
+
+    /**
+     * Retorna el Alumno Por cedula
+     */
+    public function ci($ci){
+        $alumno = Alumno::where('alumno_ci', $ci)->first();
+        return new AlumnoResource($alumno);
     }
 
 
@@ -33,18 +45,18 @@ class AlumnoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlumnoStore $request)
     {
-        $request->validate([
-            'alumno_ci' => 'required|max:11',
-            'alumno_apellidos' => 'required|max:50',
-            'alumno_nombres' => 'required|max:50' 
-        ]);
+        $alumno = new Alumno;
 
-
-
-       	if (Alumno::create($request->all())){
-       		return 'success';
+       	if ($alumno->create($request->all())){
+       		return response(
+                array(
+                    'status' => 'success', 
+                    'message' =>  "Se creo un nuevo alumno",
+                    'last_insert_id' => $alumno
+                ), 200
+            );
        	}
     }
 
@@ -54,9 +66,12 @@ class AlumnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Alumno $alumno)
-    {
-        return new AlumnoResource($alumno);
+    public function show($id)
+    {   
+        $alumno = Alumno::find($id);
+//        if (!is_null($alumno))
+            return new AlumnoResource($alumno);
+        return 'error';
     }
 
 

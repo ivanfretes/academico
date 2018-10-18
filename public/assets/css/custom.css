@@ -1,7 +1,17 @@
+html {
+	height: 100%;
+	box-sizing: inherit;
+}
+
+
 body {
+	min-height: 100%;
 	padding: 0px;
 	margin: 0px;
-	
+}
+
+.page-container {
+	margin-top: 20px;
 }
 
 
@@ -33,4 +43,26 @@ body {
 
 .btn-default {
 	width: 90px;
+}
+
+.btn-margin-label {
+	margin-top: 31px;
+}
+
+
+.custom-footer {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    padding: 20px 0px;
+    background: #dc3545;
+    color: #fff;
+}
+
+h2.title-page {
+	font-weight: bold;
+	font-size: 22px;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #ddd;
 }

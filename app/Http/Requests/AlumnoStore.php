@@ -13,7 +13,7 @@ class AlumnoStore extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,8 +24,9 @@ class AlumnoStore extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|max:50',
-            'apellido' => 'required|max:50',
+            'alumno_ci' => 'required|max:11',
+            'alumno_apellidos' => 'required|max:50',
+            'alumno_nombres' => 'required|max:50' 
         ];
     }
 }

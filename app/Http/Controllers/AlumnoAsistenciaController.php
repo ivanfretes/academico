@@ -13,7 +13,7 @@ class AlumnoAsistenciaController extends Controller
      */
     public function index()
     {
-        //
+        return view('asistencia.asistencia-dashboard');
     }
 
     /**

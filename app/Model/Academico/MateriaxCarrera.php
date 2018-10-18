@@ -9,9 +9,11 @@ class MateriaxCarrera extends Model
     public $table = 'materia_x_carrera';
     protected $primaryKey = 'id_materia_x_carrera';
 
-    protected $fillable = [
+    /*protected $fillable = [
     	'id_materia', 'id_carrera','creditos'
-   	];
+   	];*/
+
+   	protected $guarded = [];
 
    	public $timestamps = false;
 }

@@ -2,32 +2,36 @@
 /**
 	Envia un formulario, mediante AJAX
 */
-function sendForm(formIdentifier, urlAction = null, msg = 'Se guardara un registro'){
+function sendForm(formIdentifier, urlAction = null, msg = null){
 	let form = $(formIdentifier);
 	let formData = formDataToJSON(form);
 	
 	if (null == urlAction)
 		urlAction = form.attr('action');
 
-	//console.log('Enviar');
-	console.log(formData);
-	if (confirm(msg)){
-		$.ajax({
-			type: "POST",
-			url: urlAction,
-			data: formData, // serializes the form's elements.
-			headers : {
-				"content-type": "application/json",
-    			"accept": "application/json",
-			},
-			success: function(data){
-				console.log(data); // show response from the php script.
-			},
-			error : function(response, textStatus, errorThrown){
-				console.log(response);	
+	$.ajax({
+		type: "POST",
+		url: urlAction,
+		data: formData, // serializes the form's elements.
+		headers : {
+			"content-type": "application/json",
+			"accept": "application/json",
+		},
+		success: function(data){
+			console.log(data); // show response from the php script.
+			
+			if (null == msg){
+				alert(data.message);	
 			}
-		});	
-	}
+			else {
+				alert(msg)
+			}
+			
+		},
+		error : function(response, textStatus, errorThrown){
+			console.error(response);
+		}
+	});	
 }
 
 
@@ -42,8 +46,12 @@ function formDataToJSON(form) {
 	
 	for	(inputData of formArray){
 		let dataTmp = inputData.split('=');
-		obj[dataTmp[0]] = dataTmp[1];
+		let dataValueTmp = dataTmp[1];// Value;
+		if (dataValueTmp != null && dataValueTmp.trim() != ''){
+			obj[dataTmp[0]] = dataValueTmp.replace('+',' ');
+		}
 	}
 	return JSON.stringify(obj);
 }
+
 
