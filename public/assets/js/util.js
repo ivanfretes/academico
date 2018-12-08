@@ -20,6 +20,8 @@ function sendForm(formIdentifier, urlAction = null, msg = null){
 		success: function(data){
 			console.log(data); // show response from the php script.
 			
+			console.log(urlAction);
+			
 			if (null == msg){
 				alert(data.message);	
 			}
@@ -27,11 +29,14 @@ function sendForm(formIdentifier, urlAction = null, msg = null){
 				alert(msg)
 			}
 			
+			urlAction = null;
 		},
 		error : function(response, textStatus, errorThrown){
 			console.error(response);
 		}
-	});	
+	});
+	
+	console.log(formData);
 }
 
 

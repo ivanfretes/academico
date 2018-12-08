@@ -20,6 +20,8 @@
 		var urlAPI = '{{ @url("api/v1") }}/';
 		var urlAction = '';
 
+    // Contiene los datos, manejados
+    var containerData = {};
 		
 		$('document').ready(function(){
 			setTimeout(function(){

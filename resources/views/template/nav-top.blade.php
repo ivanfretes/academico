@@ -16,6 +16,10 @@
       </li>
       
       <li class="nav-item">
+        <a class="nav-link" href="{{ @route('inscripciones.index') }}">Inscripción</a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" href="{{ @url('/matriculaciones/create')}}">Matriculación</a>
       </li>
       

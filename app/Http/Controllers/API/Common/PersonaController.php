@@ -1,16 +1,13 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\Academico\API;
+namespace KuaaSys\Http\Controllers\API\Common;
 
 use Illuminate\Http\Request;
 use KuaaSys\Http\Controllers\Controller;
-use KuaaSys\Model\Academico\Materia;
-use KuaaSys\Model\Academico\MateriaxCarrera;
+use KuaaSys\Model\Common\Persona;
 
-
-class MateriaController extends Controller
+class PersonaController extends Controller
 {
-    
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +15,17 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        return Materia::all();
+        return Persona::paginate();
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -29,17 +36,7 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
-        $materia = new Materia;
-        $materia->create($request->all());
-        return 'Insertado';
-    }
-
-
-    /**
-     * Verificia si el alumno no se inscripbio en la 
-     */
-    public function notInscription(){
-
+        //
     }
 
     /**
@@ -50,9 +47,19 @@ class MateriaController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
     /**
      * Update the specified resource in storage.

@@ -8,7 +8,7 @@ class Alumno extends Model
 {
 	protected $table = 'alumnos';
 	public $primaryKey = 'id_alumno';
-	public $timestamps = false;
+	// public $timestamps = false;
 
 
 	//protected $fillable = ["alumno_nombres", "alumno_apellidos"];
@@ -53,5 +53,15 @@ class Alumno extends Model
 
 	public function asistencia(){
 		
+	}
+
+
+	/**
+	 * Retorna los datos del que coinciden en persona, con el alumno
+	 */
+	public function persona(){
+		return $this->hasOne(
+			'KuaaSys\Model\Common\Persona'
+		);
 	}
 }

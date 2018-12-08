@@ -4,10 +4,11 @@ namespace KuaaSys\Http\Controllers\Academico\API;
 
 use Illuminate\Http\Request;
 use KuaaSys\Http\Controllers\Controller;
+use KuaaSys\Model\Common\Persona;
 use KuaaSys\Model\Academico\Alumno;
 use KuaaSys\Http\Resources\AlumnoResource;
 use KuaaSys\Http\Resources\AlumnoCollection;
-use KuaaSys\Http\Requests\AlumnoStore;
+use KuaaSys\Http\Requests\PersonaStore;
 
 class AlumnoController extends Controller
 {
@@ -18,13 +19,12 @@ class AlumnoController extends Controller
 
 
     /**
-     * Listado de Alumnos
+     * Listado de Alumnos / Paginacion
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {   
-        
         return new AlumnoCollection(Alumno::paginate());
     }
 
@@ -40,24 +40,33 @@ class AlumnoController extends Controller
 
 
     /**
-     * Validaciones y creacuib del alumno
+     * Validaciones y creacion del alumno
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AlumnoStore $request)
+    public function store(PersonaStore $request)
     {
-        $alumno = new Alumno;
 
-       	if ($alumno->create($request->all())){
-       		return response(
-                array(
-                    'status' => 'success', 
-                    'message' =>  "Se creo un nuevo alumno",
-                    'last_insert_id' => $alumno
-                ), 200
-            );
-       	}
+        $persona = Persona::firstOrCreate(['ci' => $request->ci]);
+
+        // Se relaciona persona a alumno
+        $alumno_data = [
+            'id_persona' => $persona->id_persona
+        ];
+
+        $alumno = new Alumno;
+        $alumno::create($alumno_data);
+
+        return response(
+            array(
+                'status' => 'success', 
+                'message' =>  "Se agrego un alumno",
+                'last_insert_id' => $alumno->id_alumno
+            ), 200
+        );
+        
+
     }
 
     /**
@@ -82,8 +91,10 @@ class AlumnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Alumno $alumno)
+    public function update(AlumnoStore $request, Alumno $alumno)
     {
+        $alumno = Alumno::find($id);
+
         $alumno->alumno_nombres = $request->alumno_nombres;
         $alumno->id_carrera = 2;
 
@@ -92,14 +103,4 @@ class AlumnoController extends Controller
         return $alumno;
     }
 
-    /**
-     * Eliminar alumno
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

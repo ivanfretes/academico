@@ -1,52 +1,50 @@
-<form id="alumno-form" method="post" novalidate
-	action="{{ 
-		isset($alumno) ? 
-		@route('alumnos.update', $alumno->id_alumno) : 
-		@route('alumnos.store')
-	}}"	 >
-
-	{{ csrf_field() }} 
-
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<h4>Datos Personales</h4>
+		</div>
+	</div>
 
 	<div class="row">
 
-		<div class="col-lg-12">
-			<h5>Datos Personales</h5>
-		</div>
 		<div class="col-lg-6">
 
-			
-
-			<label for="alumno_nombres">Nombres:</label>
-			<input name="alumno_nombres" class="form-control" 
-				value="{{ isset($alumno->alumno_nombres) ? $alumno->alumno_nombres : '' }}">
+			<label for="nombre">Nombres:</label>
+			<input name="nombre" class="form-control" 
+				value="{{ isset($persona->nombres) ? $persona->persona_nombres : '' }}">
 		</div>
+
 		<div class="col-lg-6">
-			<label for="alumno_apellidos">Apellidos:</label>
-			<input name="alumno_apellidos" class="form-control" 
-				value="{{ isset($alumno->alumno_apellidos) ? $alumno->alumno_apellidos : '' }}">
+			<label for="apellido">Apellidos:</label>
+			<input name="apellido" class="form-control" 
+				value="{{ isset($persona->apellido) ? $persona->persona_apellidos : '' }}">
 		</div>
 
 		<div class="col-lg-4">
-			<label for="alumno_ci">Cédula:</label>
-			<input name="alumno_ci" class="form-control" 
-				  value="{{ isset($alumno->alumno_ci) ? $alumno->alumno_ci : '' }}">
+			<label for="ci">Cédula:</label>
+			<input name="ci" class="form-control" 
+				  value="{{ isset($persona->persona_ci) ? $persona->persona_ci : '' }}">
 		</div>
 
 		<div class="col-lg-4">
 			<label>Fecha Nacimiento:</label>
-			<input name="alumno_fecha_nacimiento"type="text" 
+			<input name="fecha_nacimiento"type="text" 
 				class="easyui-datebox" style="height: 38px; width: 100%">
 		</div>
 
 		<div class="col-lg-4">
-			<label for="alumno_nombres">País de Nacionalidad:</label>
-			<input name="alumno_nacionalidad" class="form-control" >
+			<label for="lugar_nacimiento">Lugar de Nacimiento:</label>
+			<input name="lugar_nacimiento" class="form-control" >
+		</div>
+
+		<div class="col-lg-4">
+			<label for="nacionalidad">País de Nacionalidad:</label>
+			<input name="nacionalidad" class="form-control" >
 		</div>
 
 		<div class="col-lg-4">
 			<label>Género:</label>
-			<select class="form-control" name="alumno_sexo" >
+			<select class="form-control" name="sexo" >
 			    <option value="H">Hombre</option>
 			    <option value="M">Mujer</option>
 			</select>
@@ -54,7 +52,7 @@
 
 		<div class="col-lg-4">
 			<label>Estado Civíl:</label>
-			<select class="form-control" name="alumno_estado_civil">
+			<select class="form-control" name="estado_civil">
 			    <option value="S">Soltero/a</option>
 			    <option value="C">Casado/a</option>
 			    <option value="D">Divorciado/a</option>
@@ -64,15 +62,15 @@
 
 		<div class="col-lg-4">
 			<label>Teléfono:</label>
-			<input name="alumno_telefono" class="form-control" >
+			<input name="persona_telefono" class="form-control" >
 		</div>
 		<div class="col-lg-12">
 			<label>Dirección:</label>
-			<input name="alumno_direccion" class="form-control" >
+			<input name="direccion_particular" class="form-control" >
 		</div>
 		<div class="col-lg-4">
 			<label>Email:</label>
-			<input name="alumno_email" class="form-control" >
+			<input name="email" class="form-control" >
 		</div>
 	</div>
 	
@@ -85,7 +83,7 @@
 		
 		<div class="col-lg-4">
 			<label>Lugar de Trabajo:</label>
-			<input name="alumno_trabajo" class="form-control" >
+			<input name="persona_trabajo" class="form-control" >
 		</div>
 
 		<div class="col-lg-4">
@@ -107,7 +105,7 @@
 		
 		<div class="col-lg-4">
 			<label>Lugar de Trabajo:</label>
-			<input name="alumno_trabajo" class="form-control" >
+			<input name="persona_trabajo" class="form-control" >
 		</div>
 
 		<div class="col-lg-4">
@@ -128,20 +126,3 @@
 		<input name="estado_temp" class="form-control" >
 	</div>
  --}}
- 
- <button class="btn btn-success" type="submit">Guardar</button>
-</form>	
-
-<script type="text/javascript">
-	$('document').ready(function(){
-		$('#alumno-form').submit(function(e){
-			e.preventDefault();
-			sendForm(
-				'#alumno-form', 
-				urlAPI+'alumnos'
-			);
-			
-		});
-	})
-	
-</script>

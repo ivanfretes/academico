@@ -3,12 +3,24 @@
 @section('content_page')
 	
 	<div class="row">
+		Contenido de Prueba
+	</div>
+
+	{{-- <div class="row">
+		<div class="row">
+			
+		</div>
+	</div> --}}
+
+	{{-- 
+	<div class="row">
+		
 		<div class="col-lg-3">
 
 			@include('template.nav-sidemenu', $navSideMenu = [
-				'Principal' => @url('alumnos'),
 				'Nuevo Alumno' => @url('alumnos/create'),
-				'Perfil Academico' => @url('alumnos/profile'),
+				'Perfil Academico' => @route('alumnos.index'),
+				'Filtro avanzado' => @url('alumnos/search'),
 			])
 
 		</div>
@@ -18,5 +30,7 @@
 			@endif
 		</div>
 	</div>
+	
 
+	 --}}
 @endsection

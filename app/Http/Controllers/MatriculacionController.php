@@ -3,7 +3,11 @@
 namespace KuaaSys\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use KuaaSys\Model\Academico\Inscripcion;
 use KuaaSys\Model\Academico\Carrera;
+use KuaaSys\Model\Academico\Alumno;
+use KuaaSys\Model\Academico\Matriculacion;
 
 class MatriculacionController extends Controller
 {
@@ -18,18 +22,22 @@ class MatriculacionController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Formulacio de creacion de una matricula, 
+     * contine los datos de la inscripcion
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $carreras = Carrera::all();
+    public function create(Request $request)
+    {   
+        $inscripcion = Inscripcion::where([
+            'id_inscripcion' => $request->id_inscripcion
+        ])->first();
 
-        //return $carreras;
-        return view('matriculacion.matriculacion-dashboard', [
-            'carreras' => $carreras
-        ]); 
+        return view('matriculacion.matriculacion-detail', [
+            'inscripcion' => $inscripcion,
+            'alumno' => $inscripcion->alumno,
+            'carrera' => $inscripcion->carrera
+        ]);
     }
 
     /**
@@ -40,7 +48,11 @@ class MatriculacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $matriculacion = new Matriculacion;
+
+        $matriculacion->observacion;
+        $matriculacion->id_materia;
+        $matriculacion->fecha_matriculacion;
     }
 
     /**

@@ -16,4 +16,15 @@ class MateriaxCarrera extends Model
    	protected $guarded = [];
 
    	public $timestamps = false;
+
+
+   	/**
+   	 * Retorna informacion de la materia
+   	 */
+   	public function materia(){
+   		return $this->belongsTo(
+   			'KuaaSys\Model\Academico\Materia',
+   			'id_materia'
+   		);
+   	}
 }

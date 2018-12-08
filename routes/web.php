@@ -11,6 +11,15 @@ Route::get('/', [
 	'uses' => 'DashboardController@index'
 ]);
 
+
+Route::get('alumnos/search', [
+	'as' => 'alumno.search',
+	'uses' => 'AlumnoController@searchByCi'
+]);
+
+
+
+
 Route::resource('asistencias', 'AlumnoAsistenciaController');
 Route::resource('calificaciones', 'CalificacionController');
 Route::resource('examenes', 'ExamenController');

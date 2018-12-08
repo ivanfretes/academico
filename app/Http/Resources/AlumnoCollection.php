@@ -21,6 +21,8 @@ class AlumnoCollection extends ResourceCollection
             'alumno_ci' => $this->alumno_ci
         ];*/
 
+        
+
         return [
             'alumnos' => $this->collection
         ];

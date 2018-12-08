@@ -11,4 +11,21 @@ class Inscripcion extends Model
     public $timestamps = false;
 	
 	protected $guarded = array();
+
+
+	// Informacion del alumno
+	public function alumno(){
+		return $this->belongsTo(
+			'KuaaSys\Model\Academico\Alumno', 
+			'id_alumno'
+		);
+	}
+
+	// Informacion de la carrera
+	public function carrera(){
+		return $this->belongsTo(
+			'KuaaSys\Model\Academico\Carrera', 
+			'id_carrera'
+		);
+	}
 }

@@ -19,7 +19,10 @@ use Illuminate\Http\Request;
  */
 
 Route::get('alumnos/ci/{alumno}', 'Academico\API\AlumnoController@ci');
-Route::resource('alumnos', 'Academico\API\AlumnoController');
+
+
+// Personas
+Route::resource('personas', 'API\Common\PersonaController');
 
 Route::resource('asistencia-alumno', 'Academico\API\AsistenciaAlumnoController');
 
@@ -74,22 +77,13 @@ Route::resource('materias', 'Academico\API\MateriaController');
 
 
 
-
-
-// Calificaciones
-Route::resource('calificaciones', 'Academico\API\CalificacionController');
-
-// Examenes
-Route::resource('examenes', 'Academico\API\ExamenController');
-
-
-// Proceso
-Route::resource('proceso-alumno', 'Academico\API\AlumnoProcesoController');
-
-
-// Solicitudes
-Route::resource('solicitudes', 'Academico\API\AlumnoProcesoController');
-
+Route::apiResources([
+	'alumnos' => 'Academico\API\AlumnoController',
+    'calificaciones' => 'Academico\API\CalificacionController',
+    'examenes' => 'Academico\API\ExamenController',
+    'proceso-alumno' => 'Academico\API\AlumnoProcesoController',
+    'solicitudes' => 'Academico\API\AlumnoProcesoController'
+]);
 
 //Documentos
 
