@@ -14,25 +14,25 @@ Route::get('/', [
 
 Route::get('alumnos/search', [
 	'as' => 'alumno.search',
-	'uses' => 'AlumnoController@searchByCi'
+	'uses' => 'Manage\Academico\AlumnoController@searchByCi'
 ]);
 
 
 
 
-Route::resource('asistencias', 'AlumnoAsistenciaController');
-Route::resource('calificaciones', 'CalificacionController');
-Route::resource('examenes', 'ExamenController');
-Route::resource('alumnos', 'AlumnoController');
-Route::resource('funcionarios', 'FuncionarioController');
-Route::resource('matriculaciones', 'MatriculacionController');
-Route::resource('procesos', 'AlumnoProcesoController');
-Route::resource('carreras', 'CarreraController');
-Route::resource('permisos', 'TipoUsuarioController');
-Route::resource('solicitudes', 'SolicitudController');
-Route::resource('becas', 'BecaController');
-Route::resource('inscripciones', 'InscripcionController');
-Route::resource('materias', 'MateriaController');
+Route::resource('asistencias', 'Manage\Academico\AlumnoAsistenciaController');
+Route::resource('calificaciones', 'Manage\Academico\CalificacionController');
+Route::resource('examenes', 'Manage\Academico\ExamenController');
+Route::resource('alumnos', 'Manage\Academico\AlumnoController');
+Route::resource('funcionarios', 'Manage\Academico\FuncionarioController');
+Route::resource('matriculaciones', 'Manage\Academico\MatriculacionController');
+Route::resource('procesos', 'Manage\Academico\AlumnoProcesoController');
+Route::resource('carreras', 'Manage\Academico\CarreraController');
+Route::resource('permisos', 'Manage\Academico\TipoUsuarioController');
+Route::resource('solicitudes', 'Manage\Academico\SolicitudController');
+Route::resource('becas', 'Manage\Academico\BecaController');
+Route::resource('inscripciones', 'Manage\Academico\InscripcionController');
+Route::resource('materias', 'Manage\Academico\MateriaController');
 
 
 
@@ -55,23 +55,4 @@ Route::resource('materias', 'MateriaController');
 
 
 use Illuminate\Http\Request;
-
-//Route::middleware(['auth.admin'])->group(function () {
-
- //    Route::match(['get', 'post'], '/', function () {
-	// 	return 'test' ;   	
-	// })->name('dashboard');
-
-	// Usuario administrador
-	
-
-	Route::get('test', function(Request $request) {
-		//dd($request->user()::check());
-
-
-		//dd(Auth::user()->role_id);
-	    //return view('template.unauthorized');
-	});
-
-//});
 

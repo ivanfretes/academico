@@ -27,6 +27,7 @@ class AlumnoStore extends FormRequest
             'ci' => 'required|max:11',
             'apellido' => 'required|max:50',
             'nombre' => 'required|max:50', 
+            'id_carrera' => 'required'
         ];
     }
 }

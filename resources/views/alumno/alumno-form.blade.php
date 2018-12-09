@@ -5,6 +5,7 @@
 <form action="{{ $formAction }}" method="post" id="alumno-form">
 	@include('persona.partials.persona-form')
 
+
 	<div class="row">
 		<button class="btn btn-primary" type="submit">Guardar</button>
 	</div>
