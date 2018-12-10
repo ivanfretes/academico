@@ -1,11 +1,11 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\Manage\Academico;
+namespace Academico2\Http\Controllers\Manage\Academico;
 
 use Illuminate\Http\Request;
-use KuaaSys\Model\Academico\Materia;
-use KuaaSys\Model\Academico\HorarioMateria;
-use KuaaSys\Model\Academico\Carrera;
+use Academico2\Model\Academico\Materia;
+use Academico2\Model\Academico\HorarioMateria;
+use Academico2\Model\Academico\Carrera;
 
 class MateriaController extends Controller
 {

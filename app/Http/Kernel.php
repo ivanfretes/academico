@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Http;
+namespace Academico2\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -16,9 +16,9 @@ class Kernel extends HttpKernel
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-        \KuaaSys\Http\Middleware\TrimStrings::class,
+        \Academico2\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \KuaaSys\Http\Middleware\TrustProxies::class,
+        \Academico2\Http\Middleware\TrustProxies::class,
     ];
 
     /**
@@ -28,12 +28,12 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \KuaaSys\Http\Middleware\EncryptCookies::class,
+            \Academico2\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \KuaaSys\Http\Middleware\VerifyCsrfToken::class,
+            \Academico2\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -55,9 +55,9 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \KuaaSys\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \Academico2\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'cors' => \KuaaSys\Http\Middleware\Cors::class,
-        'auth.admin' => \KuaaSys\Http\Middleware\AdminMiddleware::class
+        'cors' => \Academico2\Http\Middleware\Cors::class,
+        'auth.admin' => \Academico2\Http\Middleware\AdminMiddleware::class
     ];
 }

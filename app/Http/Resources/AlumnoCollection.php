@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Http\Resources;
+namespace Academico2\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
@@ -23,10 +23,10 @@ class AlumnoCollection extends ResourceCollection
 
         
 
-        return [
+        /*return [
             'alumnos' => $this->collection
-        ];
+        ];*/
 
-        //return parent::toArray($request);
+        return parent::toArray($request);
     }
 }

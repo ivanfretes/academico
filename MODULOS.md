@@ -18,33 +18,33 @@
 
 ### Academico ###
 
-* Alumno # Cuando se crea un alumno, equivale a la inscripcion del mismo
-
-* Extensiones
-* AlumnoExtension
-* Carreras
+* Alumno (✔) # Cuando se crea un alumno, equivale a la inscripcion del mismo
+* Extensiones 
+* AsistenciaExtension (✔)
+* Carreras (✔)
 * Materias
-* Examenes
+* Examenes (✔)
 * TipoExamen
-* AsistenciaExamen
-* Becas
+* AsistenciaExamen (✔)
+* Becas (✔)
 * AlumnoBeca
 * Aulas (no necesario)
 * Materias
 * MateriaDetalle
 * Funcionarios
-* Docentes
+* Facultades
+* Docentes (✔)
 * HorarioMateria
-* Correlativas
-* AsistenciaAlumno
+* Correlativas (✔)
+* AsistenciaClase (✔)
 * Matriculaciones
 * ProcesoAlumno # Contiene informacion del proceso, promedio de examenes y la nota
-* Semestre
-* SemestreCuota # Contiene monto de cuota mensual del semenstre
+* Semestre (✔)
+* SemestreCuota (✔)# Contiene monto de cuota mensual del semenstre
 * MateriaCuota # No Implementado
 
 ### Persona ###
-* Persona
+* Persona (✔)
 * RazonSocial
 * PersonaParentezco
 * PersonaProfesion
@@ -56,6 +56,8 @@
 * Usuario
 * Permisos
 * UsuarioPermiso
+* Funcionarios (✔)
+
 
 ### Contable ###
 * Factura
@@ -73,5 +75,6 @@
 
 
 ### Documentos ###
-* Documentos # Contiene un campo tabla_referencia para volverlo generico
-* DocumentoDetalle # Sube un documento, sin vincularlo a una persona, esto se realiza en la seccion de persona
+* TipoDocumento (✔) # Contiene un campo tabla_referencia y tabla_valor, que permite la carga de documentos vinculandolos a cualquier tabla
+* Documentos (✔) # Sube un documento, sin vincularlo a una persona, esto se realiza en la seccion de persona
+* DocumentoPresentado (✔) # Relaciona un Documento con un alumno, el documento tuvo que subirse previamente

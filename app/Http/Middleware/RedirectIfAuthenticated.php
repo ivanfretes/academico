@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Http\Middleware;
+namespace Academico2\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

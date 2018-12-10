@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Providers;
+namespace Academico2\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'KuaaSys\Events\Event' => [
-            'KuaaSys\Listeners\EventListener',
+        'Academico2\Events\Event' => [
+            'Academico2\Listeners\EventListener',
         ],
     ];
 

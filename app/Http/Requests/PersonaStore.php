@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Http\Requests;
+namespace Academico2\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

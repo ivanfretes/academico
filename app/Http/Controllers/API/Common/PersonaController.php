@@ -1,10 +1,10 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\API\Common;
+namespace Academico2\Http\Controllers\API\Common;
 
 use Illuminate\Http\Request;
-use KuaaSys\Http\Controllers\Controller;
-use KuaaSys\Model\Common\Persona;
+use Academico2\Http\Controllers\Controller;
+use Academico2\Model\Common\Persona;
 
 class PersonaController extends Controller
 {

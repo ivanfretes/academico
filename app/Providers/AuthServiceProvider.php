@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Providers;
+namespace Academico2\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'KuaaSys\Model' => 'KuaaSys\Policies\ModelPolicy',
+        'Academico2\Model' => 'Academico2\Policies\ModelPolicy',
     ];
 
     /**

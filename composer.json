@@ -26,7 +26,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "KuaaSys\\": "app/"
+            "Academico2\\": "app/"
         }
     },
     "autoload-dev": {

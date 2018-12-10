@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Exceptions;
+namespace Academico2\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

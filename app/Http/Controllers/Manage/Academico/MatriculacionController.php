@@ -1,13 +1,13 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\Manage\Academico;
+namespace Academico2\Http\Controllers\Manage\Academico;
 
 use Illuminate\Http\Request;
 
-use KuaaSys\Model\Academico\Inscripcion;
-use KuaaSys\Model\Academico\Carrera;
-use KuaaSys\Model\Academico\Alumno;
-use KuaaSys\Model\Academico\Matriculacion;
+use Academico2\Model\Academico\Inscripcion;
+use Academico2\Model\Academico\Carrera;
+use Academico2\Model\Academico\Alumno;
+use Academico2\Model\Academico\Matriculacion;
 
 class MatriculacionController extends Controller
 {

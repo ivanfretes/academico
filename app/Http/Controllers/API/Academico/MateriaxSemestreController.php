@@ -1,11 +1,11 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\API\Academico;
+namespace Academico2\Http\Controllers\API\Academico;
 
 
 use Illuminate\Http\Request;
-use KuaaSys\Http\Controllers\Controller;
-use KuaaSys\Model\Academico\MateriaxSemestre;
+use Academico2\Http\Controllers\Controller;
+use Academico2\Model\Academico\MateriaxSemestre;
 
 class MateriaxSemestreController extends Controller
 {

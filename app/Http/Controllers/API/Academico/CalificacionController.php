@@ -1,10 +1,10 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\Academico\API;
+namespace Academico2\Http\Controllers\Academico\API;
 
 use Illuminate\Http\Request;
-use KuaaSys\Http\Controllers\Controller;
-use KuaaSys\Model\Academico\Calificacion;
+use Academico2\Http\Controllers\Controller;
+use Academico2\Model\Academico\Calificacion;
 
 class CalificacionController extends Controller
 {

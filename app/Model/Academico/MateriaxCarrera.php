@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Model\Academico;
+namespace Academico2\Model\Academico;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,7 +23,7 @@ class MateriaxCarrera extends Model
    	 */
    	public function materia(){
    		return $this->belongsTo(
-   			'KuaaSys\Model\Academico\Materia',
+   			'Academico2\Model\Academico\Materia',
    			'id_materia'
    		);
    	}

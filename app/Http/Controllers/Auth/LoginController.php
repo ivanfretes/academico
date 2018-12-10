@@ -1,8 +1,8 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\Auth;
+namespace Academico2\Http\Controllers\Auth;
 
-use KuaaSys\Http\Controllers\Controller;
+use Academico2\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller

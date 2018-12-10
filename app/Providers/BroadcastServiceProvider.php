@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Providers;
+namespace Academico2\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;

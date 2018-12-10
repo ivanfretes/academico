@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Http\Controllers;
+namespace Academico2\Http\Controllers;
 
 use Illuminate\Http\Request;
 

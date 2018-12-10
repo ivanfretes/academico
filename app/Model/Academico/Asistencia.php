@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Model\Academico;
+namespace Academico2\Model\Academico;
 
 use Illuminate\Database\Eloquent\Model;
 

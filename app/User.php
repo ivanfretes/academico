@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys;
+namespace Academico2;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

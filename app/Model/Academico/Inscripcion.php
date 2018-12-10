@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Model\Academico;
+namespace Academico2\Model\Academico;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,7 +16,7 @@ class Inscripcion extends Model
 	// Informacion del alumno
 	public function alumno(){
 		return $this->belongsTo(
-			'KuaaSys\Model\Academico\Alumno', 
+			'Academico2\Model\Academico\Alumno', 
 			'id_alumno'
 		);
 	}
@@ -24,7 +24,7 @@ class Inscripcion extends Model
 	// Informacion de la carrera
 	public function carrera(){
 		return $this->belongsTo(
-			'KuaaSys\Model\Academico\Carrera', 
+			'Academico2\Model\Academico\Carrera', 
 			'id_carrera'
 		);
 	}

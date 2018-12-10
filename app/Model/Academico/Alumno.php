@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Model\Academico;
+namespace Academico2\Model\Academico;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,15 +8,11 @@ class Alumno extends Model
 {
 	protected $table = 'alumnos';
 	public $primaryKey = 'id_alumno';
-	// public $timestamps = false;
-
-
-	//protected $fillable = ["alumno_nombres", "alumno_apellidos"];
 	protected $guarded = array();
 
 
 	/*public function carrera(){
-		$this->hasToMany('KuaaSys\Model\Academico\Inscripcion','id_alumno');
+		$this->hasToMany('Academico2\Model\Academico\Inscripcion','id_alumno');
 	}*/
 
 
@@ -60,8 +56,6 @@ class Alumno extends Model
 	 * Retorna los datos del que coinciden en persona, con el alumno
 	 */
 	public function persona(){
-		return $this->hasOne(
-			'KuaaSys\Model\Common\Persona'
-		);
+		return $this->belongsTo('Academico2\Model\Common\Persona','ci');
 	}
 }

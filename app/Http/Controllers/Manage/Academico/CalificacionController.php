@@ -1,9 +1,9 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\Manage\Academico;
+namespace Academico2\Http\Controllers\Manage\Academico;
 
 use Illuminate\Http\Request;
-use KuaaSys\Model\Academico\Calificacion;
+use Academico2\Model\Academico\Calificacion;
 
 
 class CalificacionController extends Controller

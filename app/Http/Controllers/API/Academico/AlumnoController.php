@@ -1,14 +1,16 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\API\Academico;
+namespace Academico2\Http\Controllers\API\Academico;
 
 use Illuminate\Http\Request;
-use KuaaSys\Http\Controllers\Controller;
-use KuaaSys\Model\Common\Persona;
-use KuaaSys\Model\Academico\Alumno;
-use KuaaSys\Http\Resources\AlumnoResource;
-use KuaaSys\Http\Resources\AlumnoCollection;
-use KuaaSys\Http\Requests\PersonaStore;
+use Academico2\Http\Controllers\Controller;
+use Academico2\Model\Common\Persona;
+use Academico2\Model\Academico\Alumno;
+use Academico2\Http\Resources\Alumno as AlumnoResource;
+use Academico2\Http\Resources\AlumnoCollection;
+use Academico2\Http\Requests\AlumnoStore;
+use Academico2\Http\Resources\ErrorResponse;
+
 
 class AlumnoController extends Controller
 {
@@ -45,25 +47,37 @@ class AlumnoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PersonaStore $request)
+    public function store(AlumnoStore $request)
     {
 
-        $persona = Persona::firstOrCreate(['ci' => $request->ci]);
+        $persona = Persona::updateOrCreate([ 'ci' => $request->ci ],[
+            'nombre' => $request->nombre,
+            'apellido' => $request->apellido,
+            'fecha_nacimiento' => $request->fecha_nacimiento,
+            'lugar_nacimiento' => $request->lugar_nacimiento,
+            'ci' => $request->ci,
+            'nacionalidad' => $request->nacionalidad,
+            'direccion_particular' => $request->direccion_particular,
+            'direccion_laboral' => $request->direccion_laboral,
+            'telefono_particular' => $request->telefono_particular,
+            'telefono_laboral' => $request->telefono_laboral,
+            'sexo' => $request->sexo
+        ]);
+
 
         // Se relaciona persona a alumno
         $alumno_data = [
-            'ci' => $persona->ci
+            'ci' => $persona->ci,
+            'id_carrera' => $request->id_carrera
         ];
 
-
-        $alumno = new Alumno;
-        $alumno::create($alumno_data);
+        $alumno = Alumno::create($alumno_data);
 
         return response(
             array(
                 'status' => 'success', 
                 'message' =>  "Se agrego un alumno",
-                "data" => $alumno
+                "data" => new AlumnoResource($alumno)
             ), 200
         );
     }
@@ -77,9 +91,11 @@ class AlumnoController extends Controller
     public function show($id)
     {   
         $alumno = Alumno::find($id);
-//        if (!is_null($alumno))
+
+        if ($alumno == TRUE)
             return new AlumnoResource($alumno);
-        return 'error';
+        else 
+            return "Alumno no existe";
     }
 
 
@@ -92,12 +108,7 @@ class AlumnoController extends Controller
      */
     public function update(AlumnoStore $request, Alumno $alumno)
     {
-        $alumno = Alumno::find($id);
-
-        $alumno->alumno_nombres = $request->alumno_nombres;
-        $alumno->id_carrera = 2;
-
-        
+        $alumno->id_carrera = $request->id_carrera;
         $alumno->save();
         return $alumno;
     }

@@ -1,9 +1,9 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\Auth;
+namespace Academico2\Http\Controllers\Auth;
 
-use KuaaSys\User;
-use KuaaSys\Http\Controllers\Controller;
+use Academico2\User;
+use Academico2\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -58,7 +58,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \KuaaSys\User
+     * @return \Academico2\User
      */
     protected function create(array $data)
     {

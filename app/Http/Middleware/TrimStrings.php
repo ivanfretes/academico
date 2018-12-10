@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Http\Middleware;
+namespace Academico2\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\TrimStrings as Middleware;
 

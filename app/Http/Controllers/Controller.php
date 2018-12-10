@@ -1,6 +1,6 @@
 <?php
 
-namespace KuaaSys\Http\Controllers;
+namespace Academico2\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

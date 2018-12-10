@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        KuaaSys\Providers\AppServiceProvider::class,
-        KuaaSys\Providers\AuthServiceProvider::class,
-        // KuaaSys\Providers\BroadcastServiceProvider::class,
-        KuaaSys\Providers\EventServiceProvider::class,
-        KuaaSys\Providers\RouteServiceProvider::class,
+        Academico2\Providers\AppServiceProvider::class,
+        Academico2\Providers\AuthServiceProvider::class,
+        // Academico2\Providers\BroadcastServiceProvider::class,
+        Academico2\Providers\EventServiceProvider::class,
+        Academico2\Providers\RouteServiceProvider::class,
 
     ],
 

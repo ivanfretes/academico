@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => KuaaSys\User::class,
+            'model' => Academico2\User::class,
         ],
 
         // 'users' => [

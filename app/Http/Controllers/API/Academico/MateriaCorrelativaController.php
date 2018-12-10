@@ -1,9 +1,9 @@
 <?php
 
-namespace KuaaSys\Http\Controllers\API\Academico;
+namespace Academico2\Http\Controllers\API\Academico;
 
 use Illuminate\Http\Request;
-use KuaaSys\Http\Controllers\Controller;
+use Academico2\Http\Controllers\Controller;
 
 class MateriaCorrelativaController extends Controller
 {
