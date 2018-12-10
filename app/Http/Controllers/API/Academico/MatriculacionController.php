@@ -26,7 +26,10 @@ class MatriculacionController extends Controller
      */
     public function store(Request $request)
     {
-        Matriculacion::create($request->all());
+        Matriculacion::create([
+
+
+        ]);
     }
 
     /**

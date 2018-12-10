@@ -19,26 +19,25 @@
 ### Academico ###
 
 * Alumno (✔) # Cuando se crea un alumno, equivale a la inscripcion del mismo
-* Extensiones 
+* Extensiones (✔)
 * AsistenciaExtension (✔)
 * Carreras (✔)
-* Materias
+* Materias (✔)
 * Examenes (✔)
 * TipoExamen
 * AsistenciaExamen (✔)
 * Becas (✔)
 * AlumnoBeca
 * Aulas (no necesario)
-* Materias
-* MateriaDetalle
-* Funcionarios
-* Facultades
+* Materias (✔)
+* MateriaDetalle (✔)
+* Facultades 
 * Docentes (✔)
-* HorarioMateria
+* HorarioMateria (✔)
 * Correlativas (✔)
 * AsistenciaClase (✔)
-* Matriculaciones
-* ProcesoAlumno # Contiene informacion del proceso, promedio de examenes y la nota
+* Matriculaciones (✔)
+* ProcesoAlumno (✔) # Contiene informacion del proceso, promedio de examenes y la nota
 * Semestre (✔)
 * SemestreCuota (✔)# Contiene monto de cuota mensual del semenstre
 * MateriaCuota # No Implementado

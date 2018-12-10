@@ -5,19 +5,20 @@ Referencias
 
 Controladores
 
-	- API : Contiene toda la informacion referente a los web service
-		Namespace : KuaaSys\Http\Controllers\Academico\API
-			Modificarlo por: KuaaSys\Http\Controllers\API\Academico
-							 KuaaSys\Http\Controllers\API\Util
-							 KuaaSys\Http\Controllers\API\Negocio
-							 KuaaSys\Http\Controllers\API\Usuario
+	- API : Contiene toda la controladores que gestionan el API
+		Namespace : 
+			KuaaSys\Http\Controllers\Academico\API
+			KuaaSys\Http\Controllers\API\Academico
+			KuaaSys\Http\Controllers\API\Util
+			KuaaSys\Http\Controllers\API\Negocio
+			KuaaSys\Http\Controllers\API\Common
 
 
-	- System: Contiene los controladores que manejan el sistema y vistas 
+	- Manage: Contiene los controladores que gestionan el sistema web
 		Namespace : KuaaSys\Http\Controllers
-			Modificarlo por KuaaSys\Http\Controllers\System
-							KuaaSys\Http\Controllers\System\Academico
-							KuaaSys\Http\Controllers\System\Usuario
+			KuaaSys\Http\Controllers\Manage
+			KuaaSys\Http\Controllers\Manage\Academico
+			KuaaSys\Http\Controllers\Manage\Common
 
 
 ### Modelos 
