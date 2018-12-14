@@ -8,8 +8,29 @@ class Materia extends Model
 {
     public $table = 'materias';
     protected $primaryKey = 'id_materia';
-    public $timestamps = false;
+    protected $guarded = [];
+    
 
-    protected $fillable = [ 'id_carrera', 'nombre' ];
+    /**
+     * Retorna el listado de materias pre requisitos, o correlativas de orden
+     * inferior, es decir, son necesarias para 
+     */
+    public function materiasRequeridas(){
+    	return $this->hasMany(
+			'Academico2\Model\Academico\MateriaCorrelativa',
+			'id_materia_padre'
+		);
+    }
+
+
+    /**
+     * Retorna el listado de asistentes por materias
+     */
+    public function asistentes(){
+    	return $this->hasMany(
+			'Academico2\Model\Academico\AsistenciaClase',
+			'id_materia'
+		);
+    }
     
 }

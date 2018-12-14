@@ -8,7 +8,7 @@ class Carrera extends Model
 {
 	protected $table = 'carreras';
 	public $primaryKey = 'id_carrera';
-	public $timestamps = false;
+	// public $timestamps = false;
 
 
 	//protected $fillable = ["alumno_nombres", "alumno_apellidos"];
@@ -16,9 +16,12 @@ class Carrera extends Model
 
 
 	/**
-	 * Retorna el listado de alumnos por carrera
+	 * Retorna el listado de materias por carrera
 	 */
-	public function alumnos(){
-		
+	public function materias(){
+		return $this->hasMany(
+			'Academico2\Model\Academico\Materia',
+			'id_carrera'
+		);
 	}
 }

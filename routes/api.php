@@ -81,8 +81,8 @@ Route::apiResources([
 	'alumnos' => 'API\Academico\AlumnoController',
     'calificaciones' => 'API\Academico\CalificacionController',
     'examenes' => 'API\Academico\ExamenController',
-    'proceso-alumno' => 'API\Academico\AlumnoProcesoController',
-    'solicitudes' => 'API\Academico\AlumnoProcesoController'
+    'procesos' => 'API\Academico\AlumnoProcesoController',
+    'solicitudes' => 'API\Academico\ProcesoController'
 ]);
 
 //Documentos

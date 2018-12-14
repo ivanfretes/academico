@@ -8,7 +8,7 @@ Route::get('/', function () {
 
 Route::get('/', [
 	'as' => 'dashboard',
-	'uses' => 'DashboardController@index'
+	'uses' => 'Manage\Academico\DashboardController@index'
 ]);
 
 

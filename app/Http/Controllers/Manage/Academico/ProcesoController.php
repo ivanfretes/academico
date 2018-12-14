@@ -3,6 +3,8 @@
 namespace Academico2\Http\Controllers\Manage\Academico;
 
 use Illuminate\Http\Request;
+use Academico2\Model\Academico\ProcesoAlumno;
+
 
 class ProcesoController extends Controller
 {
@@ -13,7 +15,7 @@ class ProcesoController extends Controller
      */
     public function index()
     {
-        //
+        return ProcesoAlumno::all();
     }
 
     /**

@@ -15,32 +15,46 @@ class MatriculacionController extends Controller
      */
     public function index()
     {
-        return Matriculacion::all();
+        return ["data" => Matriculacion::all()];
     }
 
+
     /**
-     * Store a newly created resource in storage.
+     * Matricula una materia a un alumno
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        Matriculacion::create([
-
-
+        $request->validate([
+            'id_materia' => 'required',
+            'fecha_matriculacion' => 'required',
+            'id_alumno' => 'required'
         ]);
+
+        $matriculacion = Matriculacion::create($request->all());
+        return [ "data" => $matriculacion ];
     }
 
     /**
-     * Display the specified resource.
+     * Visualiza detalles de una matriculacion
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        return [ "data" => $matriculacion ];
+    }
+
+
+
+    /**
+     * Retorna el listado de matriculaciones por alumnos
+     */
+    public function getMatriculacionByAlumno(){
+
     }
 
     /**

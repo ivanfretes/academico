@@ -5,60 +5,55 @@ namespace Academico2\Http\Controllers\API\Academico;
 use Illuminate\Http\Request;
 use Academico2\Http\Controllers\Controller;
 use Academico2\Model\Academico\Carrera;
+use Academico2\Http\Resources\Carrera as CarreraResource;
+
 
 class CarreraController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Listado de carreras
      */
     public function index()
     {
-        return Carrera::all();
+        return [ 
+            "data" => Carrera::all()
+        ];
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crea una nueva carrera 
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        
-        
-        
-        $carrera = new Carrera;
-        $carrera->create($request->all());
-        return 'Insertado';
-    
+
+        $request->validate([
+            'nombre' => 'required',
+            'nro_anhos' => 'required',
+            'nro_semestres' => 'required'
+        ]);
+
+
+        $carrera = Carrera::create($request->all());
+        return [ "data" => $carrera];
     }
 
     /**
-     * Display the specified resource.
+     * Detalle de una carrera
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        // Listado de materias por carrera
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Actualiza una nueva carrera
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id

@@ -8,10 +8,16 @@ class ProcesoAlumno extends Model
 {
 	public $table = 'proceso_alumno';
 	protected $primaryKey = 'id_proceso';
+	protected $guarded = [];
 
+	/**
+	 * Retorna la materia a la que pertenece un proceso
+	 */
+	public function materia(){
+		return $this->belongsTo(
+			'Academico2\Model\Academico\Materia',
+			'id_materia'
+		);
+	}
 
-	protected $fillable = [
-		'promedio_parciales', 'promedio_finales', 'promedio_tareas'
-		'promedio_total', 'id_materia_x_carrera'
-	]; 
 }

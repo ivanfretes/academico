@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class MateriaCorrelativa extends Model
 {
-    protected $primaryKey = 'id_correlativa';
     public $table = 'correlativas';
+    protected $guarded = [];
+
+    public function materiaPrerequisito(){
+    	return $this->belongsToMany('Academico2\Model\Academico');
+    }
 }

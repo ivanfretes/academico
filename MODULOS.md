@@ -16,6 +16,9 @@
 
 ## Modulos ##
 
+* Tabla generada, vinculada al modelo (✔)
+* Webservice funcionando (w)
+
 ### Academico ###
 
 * Alumno (✔) # Cuando se crea un alumno, equivale a la inscripcion del mismo

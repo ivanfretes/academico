@@ -4,7 +4,8 @@ namespace Academico2\Http\Controllers\Manage\Academico;
 
 use Illuminate\Http\Request;
 
-use Academico2\Model\Academico\Inscripcion;
+use Academico2\Http\Controllers\Controller;
+
 use Academico2\Model\Academico\Carrera;
 use Academico2\Model\Academico\Alumno;
 use Academico2\Model\Academico\Matriculacion;
@@ -29,15 +30,48 @@ class MatriculacionController extends Controller
      */
     public function create(Request $request)
     {   
-        $inscripcion = Inscripcion::where([
-            'id_inscripcion' => $request->id_inscripcion
-        ])->first();
 
-        return view('matriculacion.matriculacion-detail', [
-            'inscripcion' => $inscripcion,
-            'alumno' => $inscripcion->alumno,
-            'carrera' => $inscripcion->carrera
+        // Listado de inscripciones de una personas
+        $inscripciones = Alumno::where(['ci' => $request->ci])->get();
+
+        // Si existe inscripciones
+        if (count($inscripciones) > 0){
+            $alumno = $inscripciones[0];
+        }
+        else {
+            $alumno = NULL;
+        } 
+
+        // Carrera Seleccionada
+        $carreraIdSelected = $request->carrera;
+        $carrera = Carrera::find($carreraIdSelected);
+
+
+        // Se verifica que la carrera no sea nula, para listar las materias
+        if (is_null($carrera)){
+            $materias = NULL;
+        }
+        else {
+            $materias = $carrera->materias;
+        }
+
+        // Listado de Procesos alumnos
+        $alumno->procesos;
+
+
+        return view('matriculacion.matriculacion-form', [
+            'inscripciones' => $inscripciones,
+            'carreraSelected' => $carrera,
+            'alumno' => $alumno,
+            'materias' => $materias,
+            'procesos' => $alumno->procesos
         ]);
+
+    }
+
+
+    protected function materiasHabilitadas(){
+
     }
 
     /**

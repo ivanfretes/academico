@@ -11,34 +11,42 @@ class Alumno extends Model
 	protected $guarded = array();
 
 
-	/*public function carrera(){
-		$this->hasToMany('Academico2\Model\Academico\Inscripcion','id_alumno');
-	}*/
-
-
 	/**
-	 * Un alumno, puede tener 1 o más carreras
+	 * Informacion de la carrera que sigue el alumno
 	 */
-	public function carreras(){
-
+	public function carrera(){
+		return $this->belongsTo(
+			'Academico2\Model\Academico\Carrera',
+			'id_carrera'
+		);
 	}
 
 
 	/**
 	 * Un Alumno puede tener 1 o más materias
+	 * Retorna las matriculaciones de un alumno, ( La idea es vincular el 
+	 * listado de materias en la que se matriculo un alumno )
 	 */
-	public function materias(){
-
+	public function matriculaciones(){
+		return $this->belongsTo(
+			'Academico2\Model\Academico\Matriculacion',
+			'id_alumno'
+		);
 	}
 
 	/**
 	 * Un alumno puede tener 1 * más examenes
+	 * Retorna el listado de examenes de un alumno
 	 */
 	public function examenes(){
-
+		return $this->hasMany(
+			'Academico2\Model\Academico\Examen',
+			'id_alumno'
+		);
 	}
 
 	/**
+	 * No Implementado
 	 * Un alumno puede visualizar 1 o más cuotas
 	 */
 	public function cuotas(){
@@ -46,9 +54,14 @@ class Alumno extends Model
 	}
 
 
-
-	public function asistencia(){
-		
+	/**
+	 * Retorna el listado de asistencias de un alumno
+	 */
+	public function asistencias(){
+		return $this->hasMany(
+			'Academico2\Model\Academico\AsistenciaClase',
+			'id_alumno'
+		);
 	}
 
 
@@ -57,5 +70,17 @@ class Alumno extends Model
 	 */
 	public function persona(){
 		return $this->belongsTo('Academico2\Model\Common\Persona','ci');
+	}
+
+
+	/**
+	 * Retorna los procesos del lumno, 
+	 * (si pasa o no de curso, y el promedio de examenes y actividades)
+	 */
+	public function procesos(){
+		return $this->hasMany(
+			'Academico2\Model\Academico\ProcesoAlumno',
+			'id_alumno'
+		);
 	}
 }

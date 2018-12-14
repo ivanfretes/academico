@@ -8,13 +8,13 @@ use Academico2\Http\Controllers\Controller;
 class MateriaCorrelativaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Listado de Materias, con sus respectivas correlativas
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return MateriaCorrelativa::all();
     }
 
     /**
@@ -24,7 +24,7 @@ class MateriaCorrelativaController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

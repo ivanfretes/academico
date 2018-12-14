@@ -18,7 +18,7 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        return Materia::all();
+        return [ "data" => Materia::all() ] ;
     }
 
     /**
@@ -29,9 +29,16 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
-        $materia = new Materia;
-        $materia->create($request->all());
-        return 'Insertado';
+        $request->validate([
+            'id_carrera' => 'required',
+            'nombre' => 'required',
+            'semestre_nro' => 'required',
+            'anho_lectivo' => 'required'
+        ]);
+
+
+        $materia = Materia::create($request->all());
+        return [ "data" => $materia ];
     }
 
 
