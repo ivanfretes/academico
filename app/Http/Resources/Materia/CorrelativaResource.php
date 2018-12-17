@@ -25,8 +25,8 @@ class CorrelativaResource extends Resource
         ];*/
 
         return [
-            "type" => "materias",
-            "id" => $this->id_materia_requisito
+            "type" => "materias_requeridas",
+            "id" => strval($this->id)
         ];
     }
 }

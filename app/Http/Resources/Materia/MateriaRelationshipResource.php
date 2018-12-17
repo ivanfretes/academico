@@ -16,7 +16,7 @@ class MateriaRelationshipResource extends Resource
     {
         //return parent::toArray($request);
         return [
-            "materias_prerequisitos" => [
+            "materias_requeridas" => [
                 "links" => [],
                 "data" => CorrelativaResource::collection(
                     $this->prerequisitos

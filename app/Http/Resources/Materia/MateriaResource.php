@@ -34,25 +34,13 @@ class MateriaResource extends Resource
     }
 
 
-    /*public function with($request)
-    {
-        return [
-            'links'    => [
-                'self' => route('materias.index'),
-            ],
-        ];
-    }*/
-
     public function with($request)
     {
         $carrera = $this->carrera;
         $materiasPrerequeridas = $this->prerequisitos;
 
-        $included = collect([$carrera, $materiasPrerequeridas])->unique();
-        //$included = $_collect->merge($materiasPrerequeridas)->unique();
-
-
-        //$included = $authors->merge($comments)->unique();
+        // Objetos/recursos incluidos en el tag 'included', JSON API
+        $included = $materiasPrerequeridas->merge([$carrera]);
 
         return [
             'links'    => [
@@ -72,9 +60,9 @@ class MateriaResource extends Resource
                     return new CarreraAttributesResource($include);
                 }
 
-                /*if ($include instanceof Comment) {
-                    return new CommentResource($include);
-                }*/
+                if ($include instanceof MateriaCorrelativa) {
+                    return new CorrelativaAttributesResource($include);
+                }
             }
         );
     }

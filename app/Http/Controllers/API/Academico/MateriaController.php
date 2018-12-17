@@ -19,17 +19,19 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        
+        return MateriaResource::collection(Materia::paginate());
     }
-
 
 
     /**
-     * Listado de Materias con sus requisitos
+     * Retorna el listado de materias por carrera
      */
-    public function prerequisitos(){
-        return MateriaResource::collection(Materia::paginate());
+    public function getMateriasByCarrera(Carrera $carrera){
+        return MateriaResource::collection(
+            Materia::where('id_carrera' , $carrera->id_carrera)->all()
+        );
     }
+
 
     /**
      * Store a newly created resource in storage.
