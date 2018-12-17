@@ -5,8 +5,9 @@ namespace Academico2\Http\Controllers\API\Academico;
 use Illuminate\Http\Request;
 use Academico2\Http\Controllers\Controller;
 use Academico2\Model\Academico\Materia;
-use Academico2\Model\Academico\MateriaxCarrera;
-
+use Academico2\Model\Academico\MateriaCorrelativa;
+use Academico2\Http\Resources\Materia\MateriaResource;
+use Academico2\Http\Resources\Materia\MateriasResource;
 
 class MateriaController extends Controller
 {
@@ -18,7 +19,16 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        return [ "data" => Materia::all() ] ;
+        
+    }
+
+
+
+    /**
+     * Listado de Materias con sus requisitos
+     */
+    public function prerequisitos(){
+        return MateriaResource::collection(Materia::paginate());
     }
 
     /**
@@ -55,9 +65,9 @@ class MateriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Materia $materia)
     {
-        
+        return new MateriaResource($materia);
     }
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Academico2\Http\Resources;
+namespace Academico2\Http\Resources\Alumno;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 

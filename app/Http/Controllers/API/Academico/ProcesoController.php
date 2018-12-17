@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Academico2\Http\Controllers\Controller;
 use Academico2\Model\Academico\ProcesoAlumno;
 
-class AlumnoProcesoController extends Controller
+class ProcesoController extends Controller
 {
     public function index(Request $request){
     	return ProcesoAlumno::all();

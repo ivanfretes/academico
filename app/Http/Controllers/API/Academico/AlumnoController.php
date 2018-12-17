@@ -27,7 +27,8 @@ class AlumnoController extends Controller
      */
     public function index()
     {   
-        return new AlumnoCollection(Alumno::paginate());
+        return Alumno::paginate();
+        //return new AlumnosResource(Alumno::paginate());
     }
 
 

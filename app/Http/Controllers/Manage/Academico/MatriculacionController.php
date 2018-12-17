@@ -13,13 +13,13 @@ use Academico2\Model\Academico\Matriculacion;
 class MatriculacionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Listado de Materias con sus correspondients correlativas
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return 'contenido de prueba';
     }
 
     /**
@@ -31,7 +31,7 @@ class MatriculacionController extends Controller
     public function create(Request $request)
     {   
 
-        // Listado de inscripciones de una personas
+        // Listado de inscripciones de una persona
         $inscripciones = Alumno::where(['ci' => $request->ci])->get();
 
         // Si existe inscripciones
@@ -56,23 +56,20 @@ class MatriculacionController extends Controller
         }
 
         // Listado de Procesos alumnos
-        $alumno->procesos;
+        //$alumno->procesos;
 
 
         return view('matriculacion.matriculacion-form', [
             'inscripciones' => $inscripciones,
             'carreraSelected' => $carrera,
             'alumno' => $alumno,
-            'materias' => $materias,
-            'procesos' => $alumno->procesos
+            'materias' => $materias
+           // 'procesos' => $alumno->procesos
         ]);
 
     }
 
 
-    protected function materiasHabilitadas(){
-
-    }
 
     /**
      * Store a newly created resource in storage.

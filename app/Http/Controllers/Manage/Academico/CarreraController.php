@@ -3,6 +3,9 @@
 namespace Academico2\Http\Controllers\Manage\Academico;
 
 use Illuminate\Http\Request;
+use Academico2\Http\Controllers\Controller;
+use Academico2\Model\Academico\Carrera;
+
 
 class CarreraController extends Controller
 {

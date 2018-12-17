@@ -20,18 +20,18 @@ Route::get('alumnos/search', [
 
 
 
-Route::resource('asistencias', 'Manage\Academico\AlumnoAsistenciaController');
-Route::resource('calificaciones', 'Manage\Academico\CalificacionController');
-Route::resource('examenes', 'Manage\Academico\ExamenController');
+//Route::resource('asistencias', 'Manage\Academico\AsistenciaClaseController');
+//Route::resource('calificaciones', 'Manage\Academico\CalificacionController');
+//Route::resource('examenes', 'Manage\Academico\ExamenController');
 Route::resource('alumnos', 'Manage\Academico\AlumnoController');
-Route::resource('funcionarios', 'Manage\Academico\FuncionarioController');
+//Route::resource('funcionarios', 'Manage\Academico\FuncionarioController');
 Route::resource('matriculaciones', 'Manage\Academico\MatriculacionController');
-Route::resource('procesos', 'Manage\Academico\AlumnoProcesoController');
-Route::resource('carreras', 'Manage\Academico\CarreraController');
-Route::resource('permisos', 'Manage\Academico\TipoUsuarioController');
-Route::resource('solicitudes', 'Manage\Academico\SolicitudController');
-Route::resource('becas', 'Manage\Academico\BecaController');
-Route::resource('inscripciones', 'Manage\Academico\InscripcionController');
+Route::resource('procesos', 'Manage\Academico\ProcesoController');
+//Route::resource('carreras', 'Manage\Academico\CarreraController');
+//Route::resource('permisos', 'Manage\Academico\TipoUsuarioController');
+//Route::resource('solicitudes', 'Manage\Academico\SolicitudController');
+//Route::resource('becas', 'Manage\Academico\BecaController');
+//Route::resource('inscripciones', 'Manage\Academico\InscripcionController');
 Route::resource('materias', 'Manage\Academico\MateriaController');
 
 

@@ -4,6 +4,12 @@ namespace Academico2\Http\Controllers\API\Academico;
 
 use Illuminate\Http\Request;
 use Academico2\Http\Controllers\Controller;
+use Academico2\Model\Academico\MateriaCorrelativa;
+use Academico2\Model\Academico\Materia;
+//use Academico2\Http\Resources\Materia as MateriaResource;
+use Academico2\Http\Resources\Materia\MateriaWrapper as MateriaWrapperResource;
+
+use Academico2\Http\Resources\MateriaCorrelativa as MateriaCorrelativaResource;
 
 class MateriaCorrelativaController extends Controller
 {
@@ -14,18 +20,9 @@ class MateriaCorrelativaController extends Controller
      */
     public function index()
     {
-        return MateriaCorrelativa::all();
+        //return MateriaWrapperResource::collection(Materia::paginate());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +32,10 @@ class MateriaCorrelativaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$correlativa = MateriaCorrelativa::create($request->all());
+
+        //return $correlativa;
+
     }
 
     /**
@@ -44,9 +44,9 @@ class MateriaCorrelativaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Materia $correlativa)
     {
-        //
+        return new MateriaWrapperResource($correlativa);
     }
 
     /**

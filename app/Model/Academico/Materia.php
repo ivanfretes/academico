@@ -15,10 +15,10 @@ class Materia extends Model
      * Retorna el listado de materias pre requisitos, o correlativas de orden
      * inferior, es decir, son necesarias para 
      */
-    public function materiasRequeridas(){
+    public function prerequisitos(){
     	return $this->hasMany(
 			'Academico2\Model\Academico\MateriaCorrelativa',
-			'id_materia_padre'
+			'id_materia'
 		);
     }
 
@@ -31,6 +31,17 @@ class Materia extends Model
 			'Academico2\Model\Academico\AsistenciaClase',
 			'id_materia'
 		);
+    }
+
+
+    /**
+     * Retorna información de la carrera
+     */
+    public function carrera(){
+        return $this->belongsTo(
+            'Academico2\Model\Academico\Carrera',
+            'id_carrera'
+        );
     }
     
 }

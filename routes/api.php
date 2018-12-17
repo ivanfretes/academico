@@ -24,25 +24,30 @@ Route::get('alumnos/ci/{alumno}', 'API\Academico\AlumnoController@ci');
 // Personas
 Route::resource('personas', 'API\Common\PersonaController');
 
-Route::resource('asistencia-alumno', 'API\Academico\AsistenciaAlumnoController');
-
-// Carreras
-Route::resource('carreras', 'API\Academico\CarreraController');
-
-// Inscripciones
-Route::resource('inscripciones', 'API\Academico\InscripcionController');
 
 
-// Matriculaciones 
-Route::resource('matriculaciones', 'API\Academico\MatriculacionController');
 
 
 // Asistencia
-Route::resource('asistencia', 'API\Academico\AlumnoAsistenciaController');
+/*Route::resource(
+	'asistencia', 
+	'Academico2\Http\Controllers\Academico\API\AsistenciaClaseController'
+);*/
 
 
 // Materias
-Route::resource('materias', 'API\Academico\MateriaController');
+
+/*Route::get(
+	'test', 
+	'API\Academico\MateriaController@materiasConRequisitos'
+);*/
+
+
+
+
+
+//Route::resource('materias', 'API\Academico\MateriaController');
+
 
 	// Visualiza las materias por identificador de carrera
 	Route::get(
@@ -63,26 +68,29 @@ Route::resource('materias', 'API\Academico\MateriaController');
 	// 	'API\Academico\MateriaxCarreraController@index'
 	// );
 
-	Route::resource(
+	/*Route::resource(
 		'materias-x-semestre', 
 		'API\Academico\MateriaxSemestreController'
-	);
+	);*/
 
 	// Genera y visualiza materias para la matriculacion, seria matriculacion detalle
-	Route::resource('materias-x-matriculacion', 'API\Academico\MateriaxMatriculaController');
+	/*Route::resource('materias-x-matriculacion', 'API\Academico\MateriaxMatriculaController');*/
 
 
 	// Asigna los horarios a una materia
-	Route::resource('horario-materia', 'API\Academico\HorarioMateriaController');
+	/*Route::resource('horario-materia', 'API\Academico\HorarioMateriaController');*/
 
 
 
 Route::apiResources([
 	'alumnos' => 'API\Academico\AlumnoController',
-    'calificaciones' => 'API\Academico\CalificacionController',
+   // 'calificaciones' => 'API\Academico\CalificacionController',
     'examenes' => 'API\Academico\ExamenController',
-    'procesos' => 'API\Academico\AlumnoProcesoController',
-    'solicitudes' => 'API\Academico\ProcesoController'
+    'procesos' => 'API\Academico\ProcesoController',
+    'solicitudes' => 'API\Academico\ProcesoController',
+    'correlativas' => 'API\Academico\MateriaCorrelativaController',
+	'matriculaciones' => 'API\Academico\MatriculacionController',
+	'materias' => 'API\Academico\MateriaController'
 ]);
 
 //Documentos

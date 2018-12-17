@@ -1,10 +1,10 @@
 <?php
 
-namespace Academico2\Http\Resources;
+namespace Academico2\Http\Resources\Materia;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class AlumnoResource extends Resource
+class CorrelativaAttributesResource extends Resource
 {
     /**
      * Transform the resource into an array.

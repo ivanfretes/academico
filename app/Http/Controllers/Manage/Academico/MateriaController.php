@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Academico2\Model\Academico\Materia;
 use Academico2\Model\Academico\HorarioMateria;
 use Academico2\Model\Academico\Carrera;
+use Academico2\Http\Controllers\Controller;
 
 class MateriaController extends Controller
 {
@@ -48,14 +49,14 @@ class MateriaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Se viualiza la carrera y sus materias
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

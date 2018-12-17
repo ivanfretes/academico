@@ -25,6 +25,9 @@ class AlumnoController extends Controller
     }
 
 
+    
+
+
     /**
      * Busca el perfil y todos los datos relacionados al alumno y lo
      * redirecciona al show de alumno / detalle

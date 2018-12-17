@@ -34,6 +34,9 @@ class Alumno extends Model
 		);
 	}
 
+
+
+
 	/**
 	 * Un alumno puede tener 1 * más examenes
 	 * Retorna el listado de examenes de un alumno
@@ -74,7 +77,7 @@ class Alumno extends Model
 
 
 	/**
-	 * Retorna los procesos del lumno, 
+	 * Retorna los procesos del alumno, 
 	 * (si pasa o no de curso, y el promedio de examenes y actividades)
 	 */
 	public function procesos(){
