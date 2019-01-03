@@ -14,22 +14,13 @@ class CorrelativaAttributesResource extends Resource
      */
     public function toArray($request)
     {
+        $_collect = collect(parent::toArray($request));
+        $attributes = $_collect->merge($this->materia);
+
         return [
             "type" => "materias_requeridas",
             "id" => strval($this->id),
-            "attributes" => [
-                "id" => $this->id,
-                "flexible" => $this->flexible,
-                "id_materia" => $this->id_materia,
-                "created_at" => $this->created_at,
-                "updated_at" => $this->updated_at,
-                "estado" => $this->estado,
-                "id_materia_requisito" => $this->id_materia_requisito
-            ],
-            "relationships" => [
-                "links" => [],
-                "data" => new MateriaAttributesResource($this->materia)
-            ]
+            "attributes" => $attributes,
         ];
     }
 }

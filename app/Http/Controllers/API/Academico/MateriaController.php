@@ -5,6 +5,7 @@ namespace Academico2\Http\Controllers\API\Academico;
 use Illuminate\Http\Request;
 use Academico2\Http\Controllers\Controller;
 use Academico2\Model\Academico\Materia;
+use Academico2\Model\Academico\Carrera;
 use Academico2\Model\Academico\MateriaCorrelativa;
 use Academico2\Http\Resources\Materia\MateriaResource;
 use Academico2\Http\Resources\Materia\MateriasResource;
@@ -27,9 +28,10 @@ class MateriaController extends Controller
      * Retorna el listado de materias por carrera
      */
     public function getMateriasByCarrera(Carrera $carrera){
-        return MateriaResource::collection(
+        /*return MateriaResource::collection(
             Materia::where('id_carrera' , $carrera->id_carrera)->all()
-        );
+        );*/
+        return $carrera->materias;
     }
 
 

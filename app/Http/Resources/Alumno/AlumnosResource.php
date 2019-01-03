@@ -4,7 +4,7 @@ namespace Academico2\Http\Resources\Alumno;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class AlumnoCollection extends ResourceCollection
+class AlumnosResource extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -14,15 +14,6 @@ class AlumnoCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        /*return [
-            //'id_alumno' => $this->id_alumno,
-            //'alumno_nombres' => $this->alumno_nombres,
-            //'alumno_apellidos' => $this->alumno_apellidos,
-            'alumno_ci' => $this->alumno_ci
-        ];*/
-
-        
-
         /*return [
             'alumnos' => $this->collection
         ];*/

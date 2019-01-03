@@ -1,10 +1,10 @@
 <?php
 
-namespace Academico2\Http\Resources;
+namespace Academico2\Http\Resources\Persona;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class Alumno extends Resource
+class PersonaBasicIdentify extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -14,10 +14,9 @@ class Alumno extends Resource
      */
     public function toArray($request)
     {
-        $persona = $this->persona;
-
         return [ 
-            "alumno" => parent::toArray($request)
+            "type" => "personas",
+            "id" => $this->ci,
         ];
     }
 }

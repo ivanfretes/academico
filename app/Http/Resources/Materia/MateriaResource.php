@@ -25,7 +25,7 @@ class MateriaResource extends Resource
             "relationships" => new MateriaRelationshipResource($this),
             "links" => [
                 'self' => route(
-                    'materias.show', [
+                    'api.materias.show', [
                     'materia' => $this->id_materia
                 ])
             ],

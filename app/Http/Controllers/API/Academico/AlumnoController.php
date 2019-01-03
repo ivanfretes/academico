@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use Academico2\Http\Controllers\Controller;
 use Academico2\Model\Common\Persona;
 use Academico2\Model\Academico\Alumno;
-use Academico2\Http\Resources\Alumno as AlumnoResource;
-use Academico2\Http\Resources\AlumnoCollection;
+use Academico2\Http\Resources\Alumno\AlumnoResource;
+//use Academico2\Http\Resources\AlumnoCollection;
 use Academico2\Http\Requests\AlumnoStore;
-use Academico2\Http\Resources\ErrorResponse;
+//use Academico2\Http\Resources\ErrorResponse;
 
 
 class AlumnoController extends Controller
@@ -27,8 +27,7 @@ class AlumnoController extends Controller
      */
     public function index()
     {   
-        return Alumno::paginate();
-        //return new AlumnosResource(Alumno::paginate());
+        return AlumnoResource::collection(Alumno::paginate());
     }
 
 

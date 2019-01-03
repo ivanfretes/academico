@@ -4,7 +4,10 @@
 
 <form action="{{ $formAction }}" method="post" id="alumno-form">
 	@include('persona.partials.persona-form')
+	
 
+	<div class="">
+	</div>
 
 	<div class="row">
 		<button class="btn btn-primary" type="submit">Guardar</button>
@@ -15,13 +18,15 @@
 	$('document').ready(function(){
 		$('#alumno-form').submit(function(e){
 			e.preventDefault();
-			console.log()
+			if (confirm('Desea guardar el elemento'){
+				console.log('se guardo una persona');
+			}
+			/*
 			sendForm(
 				'#alumno-form'
-			);
+			);*/
 		});
 	})
-	
 </script>
 
 @endsection

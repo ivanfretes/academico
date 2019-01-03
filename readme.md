@@ -1,7 +1,9 @@
 
 ## Academico2 
 
-Referencias
+Sistema de Gestión Academica
+
+* Referencias
 
 ### Controladores
 
@@ -36,6 +38,13 @@ Referencias
 	- entidad/entidad-form
 	- entidad/entidad-detail
 	- entidad/partials/*  // Codigos reutilizables de cada entidad
+
+
+### Recursos (API)
+
+Cuando el contenido requiere ser anidado, más completo y complejo.
+En algunos casos se procedio a utilizar el standard jsonapi.org (sobre todo en especificaciones y detalles)
+
 
 
 ### REST

@@ -22,7 +22,7 @@
 	@yield('content_page')
 </div>
 
-@include('template.footer-main')
+{{-- @include('template.footer-main') --}}
 
 
 

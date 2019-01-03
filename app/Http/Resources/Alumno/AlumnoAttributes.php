@@ -1,10 +1,12 @@
 <?php
 
-namespace Academico2\Http\Resources;
+namespace Academico2\Http\Resources\Alumno;
 
 use Illuminate\Http\Resources\Json\Resource;
+use Academico2\Http\Resources\Persona\PersonaAttributes;
 
-class Carrera extends Resource
+
+class AlumnoAttributes extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -14,6 +16,9 @@ class Carrera extends Resource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);  
+        return [
+            'id_alumno'
+
+        ];
     }
 }

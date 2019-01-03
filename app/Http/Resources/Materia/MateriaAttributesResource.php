@@ -15,7 +15,7 @@ class MateriaAttributesResource extends Resource
     public function toArray($request)
     {
         return [ 
-            "id_materia" => $this->id_materia,
+            //"id_materia" => $this->id_materia,
             //"carrera" => $this->carrera,
             "codigo_materia" => $this->codigo_materia,
             "creditos" => $this->creditos,
