@@ -45,6 +45,9 @@ Sistema de Gestión Academica
 Cuando el contenido requiere ser anidado, más completo y complejo.
 En algunos casos se procedio a utilizar el standard jsonapi.org (sobre todo en especificaciones y detalles)
 
+*JSON API* : Por cada recurso, la estructura es por ejemplo
+	
+
 
 
 ### REST
