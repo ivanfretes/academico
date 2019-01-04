@@ -27,7 +27,8 @@ class AlumnoController extends Controller
      */
     public function index()
     {   
-        return AlumnoResource::collection(Alumno::paginate());
+        return "contenido de prueba";
+        //return AlumnoResource::collection(Alumno::paginate());
     }
 
 
