@@ -17,6 +17,9 @@ use Illuminate\Http\Request;
 Route::namespace('API\Academico')->name('api.')->group(function()
 {
 
+	// -- Alumnos --
+	Route::get('alumnos/ci/{ci}', 'AlumnoController@getInscripcionesByCI');
+
 	// -- Materias --
 	Route::get(
 		'carreras/{carrera}/materias', 
@@ -25,6 +28,7 @@ Route::namespace('API\Academico')->name('api.')->group(function()
 
 	Route::apiResources([
 		'alumnos' => 'AlumnoController',
+		'carreras' => 'CarreraController',
 	   // 'calificaciones' => 'API\Academico\CalificacionController',
 	    'examenes' => 'ExamenController',
 	    'procesos' => 'ProcesoController',

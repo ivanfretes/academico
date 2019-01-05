@@ -33,11 +33,16 @@ class AlumnoController extends Controller
 
 
     /**
-     * Retorna el Alumno Por cedula
+     * Retorna el inscripciones de una "Academico2\Model\Common\Persona" por 
+     * ci, cada inscripcion representa un "Academico2\Model\Academico\Alumno"
+     * de una carrera
+     * 
+     * @return 
      */
-    public function ci($ci){
-        $alumno = Alumno::where('alumno_ci', $ci)->first();
-        return new AlumnoResource($alumno);
+    public function getInscripcionesByCI($ci){
+        return AlumnoResource::collection(
+            Persona::where('ci', $ci)->first()->inscripciones
+        );
     }
 
 

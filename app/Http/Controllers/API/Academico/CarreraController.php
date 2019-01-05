@@ -29,16 +29,24 @@ class CarreraController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'nombre' => 'required',
-            'nro_anhos' => 'required',
-            'nro_semestres' => 'required'
         ]);
 
+        $carrera = Carrera::create([
+            "nombre" => $request->nombre,
+            "nro_semestres" => $request->nro_semestres,
+            "nro_anhos" => $request->nro_anhos,
+            "con_tesis" => $request->con_tesis,
+            "cant_horas" => $request->cant_horas,
+            "observacion" => $request->observacion,
+            "postgrado" => $request->postgrado
+        ]);
 
-        $carrera = Carrera::create($request->all());
-        return [ "data" => $carrera];
+        return [ 
+            "data" => $carrera, 
+            "message" => "Se agrego la carrera correctamente"
+        ];
     }
 
     /**

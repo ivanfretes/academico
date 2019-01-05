@@ -14,10 +14,7 @@ class PersonaAttributes extends Resource
      */
     public function toArray($request)
     {
-        return [ 
-            "type" => "personas",
-            "id" => $this->ci,
-            "attributs" => [
+        return [
                 'nombre' => $this->nombre,
                 'apellido' => $this->apellido,
                 'fecha_nacimiento' => $this->fecha_nacimiento,
@@ -29,7 +26,6 @@ class PersonaAttributes extends Resource
                 'telefono_particular' => $this->telefono_particular,
                 'telefono_laboral' => $this->telefono_laboral,
                 'sexo' => $this->sexo
-            ]
         ];
     }
 }

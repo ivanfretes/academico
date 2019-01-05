@@ -48,7 +48,7 @@ En algunos casos se procedio a utilizar el standard jsonapi.org (sobre todo en e
 *JSON API* : Por cada recurso, la estructura es por ejemplo
 	
 
-
+Los recursos v2, aún no se encuentra implementados
 
 ### REST
 Sigue especificaciones de https://restfulapi.net/resource-naming/

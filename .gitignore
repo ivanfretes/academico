@@ -18,5 +18,5 @@ Homestead.json
 /.vagrant
 
 # custom
-app/Http/Resources/_Alumno/
+app/Http/Resources/_Alumno/v2
 # End of https://www.gitignore.io/api/laravel

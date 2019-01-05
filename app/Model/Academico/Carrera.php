@@ -8,7 +8,7 @@ class Carrera extends Model
 {
 	protected $table = 'carreras';
 	public $primaryKey = 'id_carrera';
-	// public $timestamps = false;
+	public $timestamps = false;
 
 
 	//protected $fillable = ["alumno_nombres", "alumno_apellidos"];
