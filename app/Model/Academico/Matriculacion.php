@@ -8,5 +8,7 @@ class Matriculacion extends Model
 {
     protected $table = 'matriculaciones';
 	protected $guarded = array();
+	//public $timestamps = false;
 
+	
 }

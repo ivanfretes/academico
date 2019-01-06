@@ -25,17 +25,23 @@ class MateriaCorrelativaController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Se  asigna una materia como prerequisito, correlativa de otra
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //$correlativa = MateriaCorrelativa::create($request->all());
+        $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required',
+        ]);
 
-        //return $correlativa;
-
+        $correlativa = MateriaCorrelativa::create($request->all());
+        return [
+            "data" => $correlativa,
+            "message" => "Se asigno correlativa correctamente"
+        ];
     }
 
     /**
@@ -44,10 +50,10 @@ class MateriaCorrelativaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Materia $correlativa)
+    /*public function show(Materia $correlativa)
     {
         return new MateriaWrapperResource($correlativa);
-    }
+    }*/
 
     /**
      * Show the form for editing the specified resource.

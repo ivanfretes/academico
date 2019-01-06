@@ -7,7 +7,7 @@ use Academico2\Http\Controllers\Controller;
 use Academico2\Model\Academico\Materia;
 use Academico2\Model\Academico\Carrera;
 use Academico2\Model\Academico\MateriaCorrelativa;
-use Academico2\Http\Resources\Materia\MateriaResource;
+use Academico2\Http\Resources\Materia\Materia as MateriaResource;
 use Academico2\Http\Resources\Materia\MateriasResource;
 
 class MateriaController extends Controller
@@ -20,7 +20,9 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        return MateriaResource::collection(Materia::paginate());
+
+        //Materia::paginate()
+        //return MateriaResource::collection();
     }
 
 
@@ -28,10 +30,7 @@ class MateriaController extends Controller
      * Retorna el listado de materias por carrera
      */
     public function getMateriasByCarrera(Carrera $carrera){
-        /*return MateriaResource::collection(
-            Materia::where('id_carrera' , $carrera->id_carrera)->all()
-        );*/
-        return $carrera->materias;
+        return MateriaResource::collection($carrera->materias);
     }
 
 
@@ -52,7 +51,10 @@ class MateriaController extends Controller
 
 
         $materia = Materia::create($request->all());
-        return [ "data" => $materia ];
+        return [ 
+            "data" => $materia, 
+            "msg" => "Se agrego la materia correctamente"
+        ];
     }
 
 

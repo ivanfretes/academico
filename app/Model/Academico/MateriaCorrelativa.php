@@ -17,7 +17,7 @@ class MateriaCorrelativa extends Model
     public function materia(){
     	return $this->belongsTo(
     		'Academico2\Model\Academico\Materia',
-    	 	'id_materia'
+    	 	'id_materia_requisito'
     	);
     }
 }

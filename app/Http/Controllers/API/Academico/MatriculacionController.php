@@ -20,21 +20,42 @@ class MatriculacionController extends Controller
 
 
     /**
-     * Matricula una materia a un alumno
-     *
+     * Materias a las que un alumno se matricula
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $request->validate([
-            'id_materia' => 'required',
+            'materias' => 'required',
             'fecha_matriculacion' => 'required',
             'id_alumno' => 'required'
         ]);
+        
+        $materias = $request->materias;
+        foreach ($materias as $materia) {
+            
+            try {
 
-        $matriculacion = Matriculacion::create($request->all());
-        return [ "data" => $matriculacion ];
+                Matriculacion::create([
+                    "codigo" => $materia['codigo'],
+                    "observacion" => $materia['observacion'],
+                    "id_alumno" => $request->id_alumno,
+                    "id_funcionario" => $materia['id_funcionario'],
+                    "fecha_matriculacion" => $request->fecha_matriculacion,
+                    "id_materia" => $materia['id_materia']
+                ]);  
+
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+
+        }
+
+        return [ 
+            "msg" => "Se agrego la matriculación correctamente" 
+        ];
     }
 
     /**

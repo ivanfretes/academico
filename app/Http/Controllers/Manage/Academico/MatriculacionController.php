@@ -34,7 +34,6 @@ class MatriculacionController extends Controller
         // Listado de inscripciones de una persona
         $inscripciones = Alumno::where(['ci' => $request->ci])->get();
 
-        // Si existe inscripciones
         if (count($inscripciones) > 0){
             $alumno = $inscripciones[0];
         }
@@ -42,7 +41,6 @@ class MatriculacionController extends Controller
             $alumno = NULL;
         } 
 
-        // Carrera Seleccionada
         $carreraIdSelected = $request->carrera;
         $carrera = Carrera::find($carreraIdSelected);
 
@@ -79,11 +77,22 @@ class MatriculacionController extends Controller
      */
     public function store(Request $request)
     {
-        $matriculacion = new Matriculacion;
+        /*$matriculacion = new Matriculacion;
 
         $matriculacion->observacion;
         $matriculacion->id_materia;
-        $matriculacion->fecha_matriculacion;
+        $matriculacion->fecha_matriculacion;*/
+
+
+        return $request->all();
+
+        /*$matriculacion = new Matriculacion($request->all());
+
+
+        return [
+            "data" => $matriculacion,
+            "Se agrego Matriculacion Correctamente"
+        ];*/
     }
 
     /**
