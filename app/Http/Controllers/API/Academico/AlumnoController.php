@@ -78,12 +78,11 @@ class AlumnoController extends Controller
 
         $alumno = Alumno::create($alumno_data);
 
-        return response(
-            array(
+        return response([
                 'status' => 'success', 
                 'message' =>  "Se agrego un alumno",
                 "data" => new AlumnoResource($alumno)
-            ), 200
+            ], 200
         );
     }
 
@@ -98,9 +97,9 @@ class AlumnoController extends Controller
         $alumno = Alumno::find($id);
 
         if ($alumno == TRUE)
-            return new AlumnoResource($alumno);
+            return [ "data" => new AlumnoResource($alumno) ];
         else 
-            return "Alumno no existe";
+            return [ "message" => "No se encontro alumno solicitado" ];
     }
 
 
@@ -117,5 +116,18 @@ class AlumnoController extends Controller
         $alumno->save();
         return $alumno;
     }
+
+
+    /**
+     * @since 2.0.1
+     */
+    public function destroy(Alumno $alumno)
+    {
+        if ($alumno->delete()){
+            return ["message" => "Se elimino alumno correctamente"];
+        }
+        return null;
+    }
+
 
 }

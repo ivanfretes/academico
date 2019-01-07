@@ -6,17 +6,21 @@ use Illuminate\Http\Request;
 use Academico2\Http\Controllers\Controller;
 use Academico2\Model\Academico\Matriculacion;
 use Academico2\Model\Academico\Inscripcion;
+use Academico2\Model\Academico\Alumno;
+use Academico2\Http\Resources\Matriculacion\Matriculacion as MatriculacionResource;
+
 class MatriculacionController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * No implementado
      */
     public function index()
     {
-        return ["data" => Matriculacion::all()];
+        return [
+            "data" => Matriculacion::all()
+        ];
     }
+
 
 
     /**
@@ -44,7 +48,7 @@ class MatriculacionController extends Controller
                     "id_alumno" => $request->id_alumno,
                     "id_funcionario" => $materia['id_funcionario'],
                     "fecha_matriculacion" => $request->fecha_matriculacion,
-                    "id_materia" => $materia['id_materia']
+                    "id_materia_detalle" => $materia['id_materia_detalle']
                 ]);  
 
             } catch (Exception $e) {
@@ -54,7 +58,7 @@ class MatriculacionController extends Controller
         }
 
         return [ 
-            "msg" => "Se agrego la matriculación correctamente" 
+            "message" => "Se agrego la matriculación correctamente" 
         ];
     }
 
@@ -64,7 +68,7 @@ class MatriculacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Matriculacion $matriculacion)
     {
         return [ "data" => $matriculacion ];
     }
@@ -74,8 +78,10 @@ class MatriculacionController extends Controller
     /**
      * Retorna el listado de matriculaciones por alumnos
      */
-    public function getMatriculacionByAlumno(){
+    public function getMatriculacionByAlumno(Alumno $alumno){
+        return $alumno; 
 
+        //return MatriculacionResource::collection();
     }
 
     /**
@@ -91,13 +97,18 @@ class MatriculacionController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Elimina una matriculacion
+     * @param Matriculacion $matriculacion
      */
-    public function destroy($id)
+    public function destroy(Matriculacion $matriculacion)
     {
-        //
+        if ($matriculacion->delete())
+            return [
+                "message" => "Se elimino la matriculación correctamente"
+            ];
+
+        return null;
     }
+
+
 }

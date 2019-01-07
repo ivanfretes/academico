@@ -5,14 +5,10 @@ namespace Academico2\Http\Controllers\API\Academico;
 use Illuminate\Http\Request;
 use Academico2\Http\Controllers\Controller;
 use Academico2\Model\Academico\Materia;
-use Academico2\Model\Academico\Carrera;
-use Academico2\Model\Academico\MateriaCorrelativa;
-use Academico2\Http\Resources\Materia\Materia as MateriaResource;
-use Academico2\Http\Resources\Materia\MateriasResource;
+use Academico2\Model\Academico\MateriaDetalle;
 
-class MateriaController extends Controller
+class MateriaDetalleController extends Controller
 {
-    
     /**
      * Display a listing of the resource.
      *
@@ -20,17 +16,40 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        return MateriaResource::collection(Materia::all());
+        
+    }
+
+    /**
+     * Inicializa el semestre, con los detalles de las materias, 
+     * como pueden ser, sección, semestre o año
+     */
+    public function inicializarMateriaDetalle(){
+        $materias = Materia::where('estado', 'A')->get();
+
+        foreach ($materias as $materia) {
+            
+        }
+    }
+
+
+
+    /**
+     * Duplica información de un materia detalle
+     */
+    public function duplicarMateriasDePeriodoAnterior(){
+
     }
 
 
     /**
-     * Retorna el listado de materias por carrera
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function getMateriasByCarrera(Carrera $carrera){
-        return MateriaResource::collection($carrera->materias);
+    public function create()
+    {
+        //
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -40,27 +59,7 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'id_carrera' => 'required',
-            'nombre' => 'required',
-            'semestre_nro' => 'required',
-            'anho_lectivo' => 'required'
-        ]);
-
-
-        $materia = Materia::create($request->all());
-        return [ 
-            "data" => $materia, 
-            "msg" => "Se agrego la materia correctamente"
-        ];
-    }
-
-
-    /**
-     * Verificia si el alumno no se inscripbio en la 
-     */
-    public function notInscription(){
-
+        //
     }
 
     /**
@@ -69,11 +68,21 @@ class MateriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Materia $materia)
+    public function show($id)
     {
-        return new MateriaResource($materia);
+        //
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
     /**
      * Update the specified resource in storage.

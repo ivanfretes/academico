@@ -43,5 +43,7 @@ class Materia extends Model
             'id_carrera'
         );
     }
+
+
     
 }

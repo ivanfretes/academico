@@ -177,6 +177,8 @@ return [
         Academico2\Providers\EventServiceProvider::class,
         Academico2\Providers\RouteServiceProvider::class,
 
+       // Optimus\Heimdal\Provider\LaravelServiceProvider::class,
+
     ],
 
     /*

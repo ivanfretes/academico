@@ -50,5 +50,31 @@ En algunos casos se procedio a utilizar el standard jsonapi.org (sobre todo en e
 
 Los recursos v2, aún no se encuentra implementados
 
+### Significados de siglas y estados
+
+Estados : 
+- Registros Genéricos	
+	- A : Activo
+	- I : Inactivo - Registros que no seran tomados en cuenta para nuevas transacciones
+	- P : Pendiente 
+	- C : Cancelado - Se cancela la operación
+	- R : Resuelto - Puede considerarse como Pagado, dependiendo del caso
+	- O : Observado - Se observo, pero no se tomo decisión
+
+- Pagos / Cobranzas
+	- CO : Contado
+	- CR : Credito
+
+Otras siglas
+- Género:
+	- M : Masculino
+	- F : Femenino
+
+- Turnos:
+- N : Noche
+- T : Tarde
+- M : Mañana
+
+
 ### REST
 Sigue especificaciones de https://restfulapi.net/resource-naming/
