@@ -64,6 +64,8 @@ Estados :
 - Pagos / Cobranzas
 	- CO : Contado
 	- CR : Credito
+	- CU : Cuota
+	- MA : Matricula
 
 Otras siglas
 - Género:
@@ -71,9 +73,16 @@ Otras siglas
 	- F : Femenino
 
 - Turnos:
-- N : Noche
-- T : Tarde
-- M : Mañana
+	- N : Noche
+	- T : Tarde
+	- M : Mañana
+
+- Periodo
+	- A : Anual
+	- S : Semestral
+	- M : Mensual
+
+
 
 
 ### REST

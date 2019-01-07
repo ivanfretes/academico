@@ -27,10 +27,20 @@ class MateriaDetalleController extends Controller
         $materias = Materia::where('estado', 'A')->get();
 
         foreach ($materias as $materia) {
-            
-        }
+            MateriaDetalle::create([
+
+            ]);
+        }*/
+
     }
 
+
+    /**
+     * Verifica si ya se inicializo con anterioridad
+     */
+    protected function verificarSiyaSeInicializo(){
+        return MateriaDetalle::first();
+    }
 
 
     /**
