@@ -57,7 +57,7 @@ class CarreraController extends Controller
      */
     public function show(Carrera $carrera)
     {
-        
+        return $carrera;
     }
 
     /**

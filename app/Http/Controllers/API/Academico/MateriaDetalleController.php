@@ -56,14 +56,14 @@ class MateriaDetalleController extends Controller
      * Listado de propiedades a crearse o actualzarse en la tabla 
      * MateriaDetalle
      */
-    protected function elements(Request $request){
+    protected function elements(Request $request, $id_materia){
         return [
             "cupo" => $request->cupo,
             "turno" => $request->turno,
             "observacion" => $request->observacion,
             "id_docente" => $request->id_docente,
             "seccion" => $request->seccion,
-            "id_materia" => $materia,
+            "id_materia" => $id_materia,
             "precio_cuota" => $request->precio_cuota,
             "fecha_ini" => $request->fecha_ini,
             "fecha_fin" => $request->fecha_fin,
