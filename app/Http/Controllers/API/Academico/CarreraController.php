@@ -55,9 +55,9 @@ class CarreraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Carrera $carrera)
     {
-        // Listado de materias por carrera
+        
     }
 
     /**

@@ -44,7 +44,7 @@ class MateriaController extends Controller
             'id_carrera' => 'required',
             'nombre' => 'required',
             'semestre_nro' => 'required',
-            'anho_lectivo' => 'required'
+            'anho_materia' => 'required'
         ]);
 
 

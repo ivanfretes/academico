@@ -35,7 +35,7 @@ Route::namespace('API\Academico')->name('api.')->group(function()
 
 	Route::post(
 		'materias/detalles/inicializar', 
-		'MateriaDetalleController@inicializarMateriaDetalle'
+		'MateriaDetalleController@materiaDetallePorCarrera'
 	)->name('materia-detalle.inicializar');
 
 	Route::resource('materias/detalle', 'MateriaDetalleController', [

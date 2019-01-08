@@ -20,18 +20,57 @@ class MateriaDetalleController extends Controller
     }
 
     /**
-     * Inicializa el semestre, con los detalles de las materias, 
+     * Inicializa el semestre, con los detalles de todoas materias de una carrera 
      * como pueden ser, sección, semestre o año
      */
-    public function inicializarMateriaDetalle(){
-        $materias = Materia::where('estado', 'A')->get();
+    public function materiaDetallePorCarrera(Request $request){
 
-        foreach ($materias as $materia) {
-            MateriaDetalle::create([
+        $request::validate([
+            "turno" => 'required',
+            "seccion" => 'required',
+            "anho_lectivo" => 'required',
+            "id_carrera" => 'required|number'
+        ]);
 
-            ]);
-        }*/
 
+        // Listado de Materias Activas, de X Carrera
+        $materias = Materia::where([
+            'estado' => 'A',
+            'id_carrera' => $request->carrera
+        ])->get();
+
+        if (count($materias) > 0){
+            $elements = $this->elements($request);
+
+            foreach ($materias as $materia) {
+                //MateriaDetalle::create($elements);
+                echo $materia->id_materia;
+            }
+        }
+
+
+    }
+
+
+    /**
+     * Listado de propiedades a crearse o actualzarse en la tabla 
+     * MateriaDetalle
+     */
+    protected function elements(Request $request){
+        return [
+            "cupo" => $request->cupo,
+            "turno" => $request->turno,
+            "observacion" => $request->observacion,
+            "id_docente" => $request->id_docente,
+            "seccion" => $request->seccion,
+            "id_materia" => $materia,
+            "precio_cuota" => $request->precio_cuota,
+            "fecha_ini" => $request->fecha_ini,
+            "fecha_fin" => $request->fecha_fin,
+            "anho_lectivo" => $request->anho_lectivo,
+            "estado" => $request->estado,
+            "periodo_inicio" => $request->periodo_inicio
+        ]);
     }
 
 
@@ -39,7 +78,7 @@ class MateriaDetalleController extends Controller
      * Verifica si ya se inicializo con anterioridad
      */
     protected function verificarSiyaSeInicializo(){
-        return MateriaDetalle::first();
+        
     }
 
 

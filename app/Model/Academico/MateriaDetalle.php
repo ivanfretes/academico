@@ -10,5 +10,14 @@ class MateriaDetalle extends Model
     protected $primaryKey = 'id_materia_detalle';
     protected $guarded = [];
 
-    
+   	
+   	/**
+     * Retorna información de la carrera
+     */
+    public function materia(){
+        return $this->belongsTo(
+            'Academico2\Model\Academico\Materia',
+            'id_materia'
+        );
+    }
 }
